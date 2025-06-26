@@ -239,7 +239,7 @@ const EBookOrder: React.FC = () => {
                                                         <img
                                                             src={
                                                                 order?.user_info?.profile_image
-                                                                    ? `https://files.fggroup.in/${order?.user_info?.profile_image}`
+                                                                    ? `https://files.threestyle.in/${order?.user_info?.profile_image}`
                                                                     : toAbsoluteUrl('/media/logos/fgiit-logo.png')
                                                             }
                                                             alt='User'

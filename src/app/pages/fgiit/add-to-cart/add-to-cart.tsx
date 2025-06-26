@@ -214,7 +214,7 @@ const FgiitAddToCart: React.FC = () => {
 															) : (
 																<div className='symbol symbol-45px me-5'>
 																	<img
-																		src={`https://files.fggroup.in/${data.cover_image}`}
+																		src={`https://files.threestyle.in/${data.cover_image}`}
 																		alt={data.book_title}
 																		style={{ width: '50px', height: '50px' }}
 																	/>

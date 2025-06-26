@@ -515,7 +515,7 @@ const NutritionTotalSalesList: React.FC = () => {
 															<img
 																src={
 																	item?.profile_image
-																		? `https://files.fggroup.in/${item?.profile_image}`
+																		? `https://files.threestyle.in/${item?.profile_image}`
 																		: toAbsoluteUrl('/media/logos/fgiit-logo.png')
 																}
 																alt='User'

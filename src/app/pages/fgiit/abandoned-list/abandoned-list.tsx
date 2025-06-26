@@ -190,7 +190,7 @@ const FgiitAbandonedList: React.FC = () => {
 													<img
 														src={
 															data.profile_image
-																? `https://files.fggroup.in/${data.profile_image}`
+																? `https://files.threestyle.in/${data.profile_image}`
 																: toAbsoluteUrl('/media/logos/fgiit-logo.png')
 														}
 														alt='User'
@@ -261,7 +261,7 @@ const FgiitAbandonedList: React.FC = () => {
 															<img
 																src={
 																	data.profile_image
-																		? `https://files.fggroup.in/${data.profile_image}`
+																		? `https://files.threestyle.in/${data.profile_image}`
 																		: toAbsoluteUrl('/media/logos/fgiit-logo.png')
 																}
 																alt='User'

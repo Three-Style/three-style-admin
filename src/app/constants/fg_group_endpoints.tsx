@@ -114,9 +114,27 @@ export const AddProduct = `${ProductRoute}/add`
 export const UpdateProduct = `${ProductRoute}/update`
 export const GetProduct = `${ProductRoute}/get`
 export const SetProductTrackingStatus = `${ProductRoute}/set-tracking-status`
-export const AddProductVariation = `${ProductRoute}/variation/add`
-export const UpdateProductVariation = `${ProductRoute}/variation/update`
-export const RemoveProductVariation = `${ProductRoute}/variation/remove`
+
+// Categories
+const CategoriesRoute = `${AdminV1Route}/categories`
+
+export const AddCategories = `${CategoriesRoute}/add`
+export const UpdateCategories = `${CategoriesRoute}/update`
+export const GetCategories = `${CategoriesRoute}/get`
+
+// Fabric
+const FabricRoute = `${AdminV1Route}/fabric`
+
+export const AddFabric = `${FabricRoute}/add`
+export const UpdateFabric = `${FabricRoute}/update`
+export const GetFabric = `${FabricRoute}/get`
+
+// Sub Categories
+const SubCategoriesRoute = `${AdminV1Route}/sub-categories`
+
+export const AddSubCategories = `${SubCategoriesRoute}/add`
+export const UpdateSubCategories = `${SubCategoriesRoute}/update`
+export const GetSubCategories = `${SubCategoriesRoute}/get`
 
 // Product/Product Review
 const ProductReviewRoute = `${ProductRoute}/product-review`

@@ -350,7 +350,7 @@ const ManageCoupon: React.FC = () => {
 																<button
 																	className='btn gap-2 d-block mt-2 mb-2 btn-light-primary mx-2 btn-sm me-1'
 																	onClick={() =>
-																		handleCopyUrl(`https://fggroup.in?coupon_id=${data._id}`)
+																		handleCopyUrl(`https://threestyle.in?coupon_id=${data._id}`)
 																	}>
 																	<FontAwesomeIcon
 																		icon={faCopy}

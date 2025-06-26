@@ -563,9 +563,9 @@ const UserView = () => {
 												alt='Users'
 												src={
 													isDocument.profile
-														? `https://files.fggroup.in/${documentFile.profile}`
+														? `https://files.threestyle.in/${documentFile.profile}`
 														: userResponseData?.profile?.file
-														? `https://files.fggroup.in/${userResponseData?.profile?.file}`
+														? `https://files.threestyle.in/${userResponseData?.profile?.file}`
 														: '/media/avatars/300-1.jpg'
 												}
 												style={{ borderRadius: '10px', width: '90%' }}
@@ -591,9 +591,9 @@ const UserView = () => {
 												alt='Users'
 												src={
 													isDocument.aadhar
-														? `https://files.fggroup.in/${documentFile.aadhar}`
+														? `https://files.threestyle.in/${documentFile.aadhar}`
 														: userResponseData?.aadhar?.file
-														? `https://files.fggroup.in/${userResponseData?.aadhar?.file}`
+														? `https://files.threestyle.in/${userResponseData?.aadhar?.file}`
 														: '/media/avatars/300-1.jpg'
 												}
 												style={{ borderRadius: '10px', width: '90%' }}
@@ -619,9 +619,9 @@ const UserView = () => {
 												alt='Users'
 												src={
 													isDocument.marksheet
-														? `https://files.fggroup.in/${documentFile.marksheet}`
+														? `https://files.threestyle.in/${documentFile.marksheet}`
 														: userResponseData?.marksheet?.file
-														? `https://files.fggroup.in/${userResponseData?.marksheet?.file}`
+														? `https://files.threestyle.in/${userResponseData?.marksheet?.file}`
 														: '/media/avatars/300-1.jpg'
 												}
 												style={{ borderRadius: '10px', width: '90%' }}

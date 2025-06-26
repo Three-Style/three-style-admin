@@ -230,7 +230,7 @@ const Books: React.FC = () => {
 											<div className='d-flex align-items-center'>
 												<div className='symbol symbol-45px me-5'>
 													<img
-														src={`https://files.fggroup.in/${data.cover_image}`}
+														src={`https://files.threestyle.in/${data.cover_image}`}
 														alt={data.book_title}
 														style={{ width: '50px', height: '50px' }}
 													/>
@@ -265,7 +265,7 @@ const Books: React.FC = () => {
 												<div>
 													<strong>{sortableFields[1].title}: </strong>{' '}
 													<img
-														src={`https://files.fggroup.in/${data.cover_image}`}
+														src={`https://files.threestyle.in/${data.cover_image}`}
 														alt={data.book_title}
 														className='fs-3 text-primary'
 														style={{ width: '65px', height: '65px', borderRadius: '20%' }}

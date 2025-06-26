@@ -166,7 +166,7 @@ const AddToCart: React.FC = () => {
 												<td>
 													<span className='d-inline-block align-middle'>
 														<img
-															src={`https://files.fggroup.in/${data.display_image}`}
+															src={`https://files.threestyle.in/${data.display_image}`}
 															alt={data.name}
 															className='fs-3 text-primary'
 															style={{ width: '55px', height: '55px', borderRadius: '20%' }}

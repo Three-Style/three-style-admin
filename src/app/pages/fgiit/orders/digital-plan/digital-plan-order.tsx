@@ -104,7 +104,7 @@ const DigitalPlanOrder: React.FC = () => {
 														<img
 															src={
 																foodtime.profile_image
-																	? `https://files.fggroup.in/${foodtime.profile_image}`
+																	? `https://files.threestyle.in/${foodtime.profile_image}`
 																	: toAbsoluteUrl('/media/logos/fgiit-logo.png')
 															}
 															alt='User'

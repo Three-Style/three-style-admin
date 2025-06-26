@@ -1,21 +1,44 @@
 import { getAPIHeaders } from '../../../_metronic/helpers/AuthToken'
-import { APIDelete, APIGet, APIPatch, APIPost } from '../../../_metronic/helpers/Utils'
+import { APIGet, APIPost } from '../../../_metronic/helpers/Utils'
 import * as FGGroupEndpoints from '../../constants/fg_group_endpoints'
 
 export function AddProduct(body: {
+	display_image: [string]
 	name: string
-	display_image?: string
 	price: number
-	private_note?: string
+	discount_price: number
+	discount_percentage: number
+	description: string
+	categories: string
+	fabric: string
+	sub_categories: string
+	stock: number
+	color: {
+		color_name: string
+		color_code: string
+	}
+	tags: [string]
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(FGGroupEndpoints.AddProduct, getAPIHeaders('fg_group'), undefined, body)
 }
 
 export function UpdateProduct(body: {
 	id: string
-	name?: string
-	display_image?: string
+	display_image?: [string]
+	name: string
 	price?: number
+	discount_price?: number
+	discount_percentage?: number
+	description?: string
+	categories?: string
+	fabric?: string
+	sub_categories?: string
+	stock?: number
+	color?: {
+		color_name?: string
+		color_code?: string
+	}
+	tags?: [string]
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(FGGroupEndpoints.UpdateProduct, getAPIHeaders('fg_group'), undefined, body)
 }
@@ -24,45 +47,6 @@ export function GetProduct(
 	query?: { id?: string } & FGGroupSearchOptions & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
 	return APIGet(FGGroupEndpoints.GetProduct, getAPIHeaders('fg_group'), query)
-}
-
-export function AddProductVariation(body: {
-	product_id: string
-	name: string
-	price: number
-	discountPrice: number
-	description: string
-	display_image: string[]
-	stock: number
-	isAvailable: boolean
-}): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.AddProductVariation, getAPIHeaders('fg_group'), undefined, body)
-}
-
-export function UpdateProductVariation(body: {
-	product_id: string
-	variant_id: string
-	name: string
-	price: number
-	discountPrice: number
-	description: string
-	display_image: string[]
-	stock: number
-	isAvailable: boolean
-}): Promise<FGGroupAPIResponse> {
-	return APIPatch(
-		FGGroupEndpoints.UpdateProductVariation,
-		getAPIHeaders('fg_group'),
-		undefined,
-		body
-	)
-}
-
-export function RemoveProductVariation(body: {
-	product_id?: string
-	variant_id?: string
-}): Promise<FGGroupAPIResponse> {
-	return APIDelete(FGGroupEndpoints.RemoveProductVariation, getAPIHeaders('fg_group'), undefined, body)
 }
 
 export function SetProductTrackingStatus(body: {

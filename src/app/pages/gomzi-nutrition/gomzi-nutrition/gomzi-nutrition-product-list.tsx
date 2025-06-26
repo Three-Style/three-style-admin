@@ -85,9 +85,13 @@ const GomziNutritionProductList: React.FC = () => {
 
 	const sortableFields = [
 		{ title: 'Product ID', field: '_id' },
-		{ title: 'Product Name', field: 'name' },
+		{ title: 'SKU No', field: 'sku_no' },
 		{ title: 'Image', field: 'display_image' },
+		{ title: 'Name', field: 'name' },
 		{ title: 'Price', field: 'price' },
+		{ title: 'Dis Price', field: 'discount_price' },
+		{ title: 'Discount %', field: 'discount_percentage' },
+		{ title: 'Stock', field: 'stock' },
 	]
 
 	const handleRowClick = (id: string) => {
@@ -148,7 +152,7 @@ const GomziNutritionProductList: React.FC = () => {
 							sortOrder={sortOrder}
 							onSortChange={handleSortChange}
 							renderRow={(product: any, index: number, actualIndex: number, isVisible: boolean) => (
-								<React.Fragment key={product._id}>
+								<React.Fragment key={index}>
 									<tr
 										onClick={() => handleRowClick(product._id)}
 										className='data-row'>
@@ -179,13 +183,13 @@ const GomziNutritionProductList: React.FC = () => {
 										</td>
 										<td>
 											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
-												{product.name}
+												{product.sku_no}
 											</span>
 										</td>
 										<td>
 											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
 												<img
-													src={`https://files.fggroup.in/` + product.display_image}
+													src={`https://files.threestyle.in/` + product?.display_image?.[0]}
 													alt={product.name}
 													style={{ width: '80px', height: '80px', borderRadius: '10px' }}
 												/>
@@ -193,18 +197,31 @@ const GomziNutritionProductList: React.FC = () => {
 										</td>
 										<td>
 											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
-												₹ {product.price}
+												{product.name}
+											</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												₹{product.price}
+											</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												₹{product.discount_price}
+											</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												{product.discount_percentage}%
+											</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												{product.stock} Piece
 											</span>
 										</td>
 										<td>
 											<div className='d-flex'>
-												<TableButton
-													action='view'
-													to={
-														'/nutrition/gomzi-nutrition-product/variation-list?product_id=' +
-														product._id
-													}
-												/>
 												<TableButton
 													action='edit'
 													to={'/nutrition/gomzi-nutrition-product-edit?product_id=' + product._id}

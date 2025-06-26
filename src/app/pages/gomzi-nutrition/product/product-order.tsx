@@ -285,7 +285,7 @@ const ProductOrder: React.FC = () => {
 														<img
 															src={
 																order?.user_info?.profile_image
-																	? `https://files.fggroup.in/${order?.user_info?.profile_image}`
+																	? `https://files.threestyle.in/${order?.user_info?.profile_image}`
 																	: toAbsoluteUrl('/media/logos/fgiit-logo.png')
 															}
 															alt='User'
@@ -358,7 +358,7 @@ const ProductOrder: React.FC = () => {
 													<div>
 														<strong>{sortableFields[1].title}: </strong>{' '}
 														<img
-															src={`https://files.fggroup.in/${order.cover_image}`}
+															src={`https://files.threestyle.in/${order.cover_image}`}
 															alt={order.book_title}
 															className='fs-3 text-primary'
 															style={{ width: '65px', height: '65px', borderRadius: '20%' }}

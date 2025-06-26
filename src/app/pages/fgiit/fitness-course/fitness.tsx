@@ -358,7 +358,7 @@ const FitnessCourses: React.FC = () => {
 												{item.image_url && (
 													<div className='symbol symbol-45px me-5'>
 														<img
-															src={`https://files.fggroup.in/${item.image_url}`}
+															src={`https://files.threestyle.in/${item.image_url}`}
 															alt={item.course_name}
 															style={{ width: '50px', height: '50px' }}
 														/>
@@ -518,7 +518,7 @@ const FitnessCourses: React.FC = () => {
 									fitnessCourseData.image_url
 										? fitnessCourseData.editImage == true
 											? fitnessCourseData.image_url
-											: `https://files.fggroup.in/${fitnessCourseData.image_url}`
+											: `https://files.threestyle.in/${fitnessCourseData.image_url}`
 										: '/media/avatars/300-1.jpg'
 								}
 								style={{ borderRadius: '10px', width: '90%' }}

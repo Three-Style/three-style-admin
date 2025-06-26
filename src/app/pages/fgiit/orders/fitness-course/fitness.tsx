@@ -198,7 +198,7 @@ const FitnessOrder: React.FC = () => {
 														<img
 															src={
 																order.profile_image
-																	? `https://files.fggroup.in/${order.profile_image}`
+																	? `https://files.threestyle.in/${order.profile_image}`
 																	: toAbsoluteUrl('/media/logos/fgiit-logo.png')
 															}
 															alt='User'

@@ -282,7 +282,7 @@ const GomziNutritionProductStock: React.FC = () => {
 										<td>
 											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
 												<img
-													src={`https://files.fggroup.in/` + product?.item_id?.display_image}
+													src={`https://files.threestyle.in/` + product?.item_id?.display_image}
 													alt={product?.item_id?.name}
 													style={{ width: '80px', height: '80px', borderRadius: '10px' }}
 												/>

@@ -425,3 +425,18 @@ select {
 .rotate {
     animation: rotate360 1s linear;
 }
+
+.rti--container {
+	padding: 0.775rem 1rem !important;
+    border: 1px solid #e1e3ea !important;
+    background-color: #bdbdbd12 !important;
+}
+
+.rti--tag {
+    color: #5e6278 !important;
+    font-weight: 500 !important;
+}
+
+.rti--input {
+	width: 100% !important;
+}

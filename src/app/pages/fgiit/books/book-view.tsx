@@ -136,7 +136,7 @@ const BookView = () => {
 												bookViewData.cover_image
 													? bookViewData.editImage == true
 														? bookViewData.cover_image
-														: `https://files.fggroup.in/${bookViewData.cover_image}`
+														: `https://files.threestyle.in/${bookViewData.cover_image}`
 													: '/media/avatars/300-1.jpg'
 											}
 											style={{ borderRadius: '10px', width: '90%' }}

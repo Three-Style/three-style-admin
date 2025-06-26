@@ -19,9 +19,6 @@ import { ProductOrderView } from '../pages/gomzi-nutrition/product/product-order
 import ManageCoupon from '../pages/gomzi-nutrition/reference-coupon/manage-coupon'
 import Reference from '../pages/gomzi-nutrition/reference-coupon/reference'
 import GomziNutritionProductStock from '../pages/gomzi-nutrition/stock/gomzi-product-stock-list'
-import GomziNutritionProductVariationList from '../pages/gomzi-nutrition/gomzi-nutrition/product-variation-list'
-import { EditGomziNutritionVariationProduct } from '../pages/gomzi-nutrition/gomzi-nutrition/edit-product-variation'
-import { AddGomziNutritionVariationProduct } from '../pages/gomzi-nutrition/gomzi-nutrition/add-product-variation'
 import NutritionCreateQuotation from '../pages/gomzi-nutrition/quotation/create-quotation'
 
 const GomziNutritionPrivateRoutes = () => {
@@ -43,18 +40,6 @@ const GomziNutritionPrivateRoutes = () => {
 				<Route
 					path='gomzi-nutrition-product-edit'
 					element={<EditGomziNutritionProduct />}
-				/>
-				<Route
-					path='/gomzi-nutrition-product/variation-list'
-					element={<GomziNutritionProductVariationList />}
-				/>
-				<Route
-					path='/gomzi-nutrition-product/variation-edit'
-					element={<EditGomziNutritionVariationProduct />}
-				/>
-				<Route
-					path='/gomzi-nutrition-product/variation-add'
-					element={<AddGomziNutritionVariationProduct />}
 				/>
 				<Route
 					path='/add-to-cart'
