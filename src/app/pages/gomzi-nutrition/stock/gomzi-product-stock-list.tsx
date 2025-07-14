@@ -228,7 +228,7 @@ const GomziNutritionProductStock: React.FC = () => {
 
 	return (
 		<>
-			<PageTitle breadcrumbs={[]}>Gomzi Nutrition Products</PageTitle>
+			<PageTitle breadcrumbs={[]}>Three Style Products</PageTitle>
 			<KTCard>
 				<div className='card-header border-0 pt-6'>
 					<div className='card-title'>

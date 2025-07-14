@@ -59,7 +59,7 @@ const GomziNutritionDashboard = () => {
 		setAdminType(admin == 'Store')
 		setLoading(true)
 		try {
-			const category: any = admin == 'Store' ? admin : 'Gomzi Nutrition'
+			const category: any = admin == 'Store' ? admin : 'Three Style'
 			// const response: any = await GetInvoiceInsights({
 			// 	invoice_category: category,
 			// })

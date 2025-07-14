@@ -239,3 +239,8 @@ export const CreateStockManagement = `${StockManagementRoute}/create`
 export const RemoveStockManagement = `${StockManagementRoute}/remove`
 export const GetStockManagement = `${StockManagementRoute}/get`
 export const UpdateStockManagement = `${StockManagementRoute}/update`
+
+// Wishlist
+const WishlistRoute = `${AdminV1Route}/wishlist`
+
+export const GetWishlist = `${WishlistRoute}/get`

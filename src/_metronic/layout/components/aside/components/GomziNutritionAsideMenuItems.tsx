@@ -5,6 +5,7 @@ import {
 	faCoins,
 	faDumbbell,
 	faFileInvoice,
+	faHeart,
 	faHome,
 	faJar,
 	faTags,
@@ -34,6 +35,11 @@ export function GomziNutritionAsideMenuItems() {
 				to='/nutrition/abandoned-list'
 				title='Abandoned Checkout'
 				Icon={faJar}
+			/>
+			<AsideMenuItem
+				to='wishlist'
+				title='Wishlist'
+				Icon={faHeart}
 			/>
 			<AsideMenuItemWithSub
 				to=''

@@ -48,7 +48,7 @@ const NutritionTotalSalesList: React.FC = () => {
 	const fetchInvoiceData = async (page?: number, store?: any, createdById?: string) => {
 		setLoading(true)
 		try {
-			const category = adminType === 'Store' ? adminType : 'Gomzi Nutrition'
+			const category = adminType === 'Store' ? adminType : 'Three Style'
 
 			let startDate: Date
 			let endDate: Date
@@ -136,7 +136,7 @@ const NutritionTotalSalesList: React.FC = () => {
 		}
 		setLoading(true)
 		try {
-			const category: any = adminType == 'Store' ? adminType : 'Gomzi Nutrition'
+			const category: any = adminType == 'Store' ? adminType : 'Three Style'
 			// const response: any = await GetInvoiceInsights({
 			// 	invoice_category: category,
 			// 	from_date: startDate,

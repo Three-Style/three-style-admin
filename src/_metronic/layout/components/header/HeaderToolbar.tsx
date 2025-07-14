@@ -154,7 +154,7 @@ const HeaderToolbar = () => {
 											onClick={() =>
 												handleSelection('/media/logos/gomzi-nutrition.png', 'Gomzi_Nutrition')
 											}>
-											<span className='menu-title'>Gomzi Nutrition</span>
+											<span className='menu-title'>Three Style</span>
 										</a>
 									</div>
 									{/* <div className='menu-item my-0'>
@@ -167,7 +167,7 @@ const HeaderToolbar = () => {
 													'Gomzi_Nutrition_trainer'
 												)
 											}>
-											<span className='menu-title'>Gomzi Nutrition Trainer</span>
+											<span className='menu-title'>Three Style Trainer</span>
 										</a>
 									</div> */}
 								</div>

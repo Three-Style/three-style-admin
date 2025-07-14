@@ -62,7 +62,7 @@ const NutritionCreateInvoice: React.FC = () => {
 		try {
 			setIsSubmitting(true)
 			const payload: any = {
-				invoice_category: adminType == 'Store' ? adminType : 'Gomzi Nutrition',
+				invoice_category: adminType == 'Store' ? adminType : 'Three Style',
 				invoice_number: Number(formData?.invoice_number),
 				date: DayJS(formData?.date).format('YYYY/MM/DD'),
 				name: formData?.name,
@@ -123,7 +123,7 @@ const NutritionCreateInvoice: React.FC = () => {
 
 	const fetchInvoiceData = async () => {
 		try {
-			const category: any = adminType == 'Store' ? adminType : 'Gomzi Nutrition'
+			const category: any = adminType == 'Store' ? adminType : 'Three Style'
 			const response: FGGroupAPIResponse | any = await getNextInvoiceSequence({
 				invoice_category: category,
 			})
@@ -586,7 +586,7 @@ const NutritionCreateInvoice: React.FC = () => {
 								<div className='invoice-header row mt-2 p-3 align-items-start'>
 									<div className='col-md-8'>
 										<p className='fs-4 mb-1'>
-											<b>{adminType == 'Store' ? 'GOMZI NUTRITION ' : 'Gomzi Lifesciences LLP'}</b>
+											<b>Three Style</b>
 										</p>
 										{formData.branch_name == 'Adajan' ? (
 											<>
