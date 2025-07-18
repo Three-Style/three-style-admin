@@ -15,16 +15,11 @@ const HeaderToolbar = () => {
 		const storedAdmin = localStorage.getItem('admin')
 		const storedAdminType = localStorage.getItem('admin_type')
 		const masterAdminLogin = localStorage.getItem('fg_master')
-		const portalAdminLogin = localStorage.getItem('fwg_portal')
 		if (masterAdminLogin === 'main_master') {
 			setMasterShow(true)
 		}
-		if (portalAdminLogin === 'fwg_portal') {
-			setFwgSubAdminShow(portalAdminLogin)
-			setSelectedLogo('/media/logos/fintess-with-gomzi-logo.png')
-		}
 		if (storedAdmin) {
-			if (storedAdmin === 'FGIIT') {
+			if (storedAdmin === 'THREE-STYLE') {
 				setSelectedLogo('/media/logos/fgiit-logo.png')
 			} else if (storedAdmin === 'Master') {
 				setSelectedLogo('/media/logos/fwg-logo.png')
@@ -44,7 +39,7 @@ const HeaderToolbar = () => {
 		setSelectedLogo(logo)
 		localStorage.setItem('admin', value)
 
-		if (value === 'FGIIT') {
+		if (value === 'THREE-STYLE') {
 			window.location.href = '/fgiit/dashboard'
 		} else if (value === 'Master') {
 			window.location.href = '/master/dashboard'
@@ -143,7 +138,7 @@ const HeaderToolbar = () => {
 										<a
 											href='#'
 											className='menu-link'
-											onClick={() => handleSelection('/media/logos/fgiit-logo.png', 'FGIIT')}>
+											onClick={() => handleSelection('/media/logos/fgiit-logo.png', 'THREE-STYLE')}>
 											<span className='menu-title'>FGIIT</span>
 										</a>
 									</div>
@@ -187,14 +182,6 @@ const HeaderToolbar = () => {
 											}}
 										/>
 									</a>
-									<div className='menu-item my-0'>
-										<a
-											href='#'
-											className='menu-link px-0 py-0'
-											onClick={() =>
-												handleSelection('/media/logos/fintess-with-gomzi-logo.png', 'Employee')
-											}></a>
-									</div>
 								</>
 							)}
 						</div>

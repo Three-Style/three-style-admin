@@ -3,7 +3,7 @@ import { APIGet } from '../../../_metronic/helpers/Utils'
 import * as FGGroupEndpoints from '../../constants/fg_group_endpoints'
 
 export function GetGeneralDashboard(): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GeneralDashboardStats, getAPIHeaders('fg_group'))
+	return APIGet(FGGroupEndpoints.GeneralDashboardStats, getAPIHeaders('three_style'))
 }
 
 /**
@@ -14,5 +14,5 @@ export function GetStudentDashboard(): Promise<FGGroupAPIResponse> {
 	console.warn(
 		'[DEPRECATED] Use Insights.GetStudentsStats() instead of Dashboard.GetStudentDashboard()'
 	)
-	return APIGet(FGGroupEndpoints.StudentDashboardStats, getAPIHeaders('fg_group'))
+	return APIGet(FGGroupEndpoints.StudentDashboardStats, getAPIHeaders('three_style'))
 }

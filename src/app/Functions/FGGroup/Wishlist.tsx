@@ -5,5 +5,5 @@ import * as FGGroupEndpoints from '../../constants/fg_group_endpoints'
 export function GetWishlist(
 	query?: { id?: string } & FGGroupSearchOptions & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetWishlist, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetWishlist, getAPIHeaders('three_style'), query)
 }

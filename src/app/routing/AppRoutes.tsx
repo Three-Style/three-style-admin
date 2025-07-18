@@ -4,39 +4,39 @@ import { App } from '../App'
 import { AuthPage, Logout } from '../modules/auth'
 import { NutritionAuthPage } from '../pages/gomzi-nutrition/auth/AuthPage'
 import { MasterAuthPage } from '../pages/master/auth/AuthPage'
-import { FgiitPrivateRoutes } from './FgiitPrivateRoutes'
+import { ThreeStylePrivateRoutes } from './ThreeStylePrivateRoutes'
 import { GomziNutritionPrivateRoutes } from './GomziNutritionPrivateRoutes'
 import { MasterPrivateRoutes } from './MasterPrivateRoutes'
 const { PUBLIC_URL } = process.env
 
 const AppRoutes: FC = () => {
-	const [fgiitToken, setFgiitToken] = useState<string | null>(null)
+	const [threeStyleToken, setThreeStyleToken] = useState<string | null>(null)
 	const [masterToken, setMasterToken] = useState<string | null>(null)
 	const [gomziNutritionToken, setGomziNutritionToken] = useState<string | null>(null)
 	const [adminType, setAdminType] = useState<string | null>(null)
 	const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
 
 	useEffect(() => {
-		const fgiit_Token = localStorage.getItem('auth_fg_group')
-		const master_Token = localStorage.getItem('auth_fg_group')
-		const Gomzi_Nutrition_Token = localStorage.getItem('auth_fg_group')
+		const three_style_Token = localStorage.getItem('auth_three_style')
+		const master_Token = localStorage.getItem('auth_three_style')
+		const Gomzi_Nutrition_Token = localStorage.getItem('auth_three_style')
 		const admin_Type = localStorage.getItem('admin')
 
-		setFgiitToken(fgiit_Token)
+		setThreeStyleToken(three_style_Token)
 		setMasterToken(master_Token)
 		setGomziNutritionToken(Gomzi_Nutrition_Token)
 		setAdminType(admin_Type)
 
-		// Check if the auth_fg_group token is available
-		if (fgiit_Token) {
+		// Check if the auth_three_style token is available
+		if (three_style_Token) {
 			setIsAuthenticated(true)
 		}
 	}, [])
 
-	const getDefaultRoute = () => {
+	const getDefaultRoute = () => {	
 		if (adminType === 'Gomzi_Nutrition' && gomziNutritionToken) return '/nutrition/dashboard'
 		if (adminType === 'Master' && masterToken) return '/master/dashboard'
-		if (adminType === 'FGIIT' && fgiitToken) return '/fgiit/dashboard'
+		if (adminType === 'THREE-STYLE' && threeStyleToken) return '/fgiit/dashboard'
 		if (gomziNutritionToken) return '/nutrition/dashboard'
 		return '/error/404'
 	}
@@ -54,7 +54,7 @@ const AppRoutes: FC = () => {
 		// 	localStorage.removeItem('admin')
 		// }
 		
-		let currentUrl = window.location.pathname
+		const currentUrl = window.location.pathname
 		
 		const isLoginPage = currentUrl.includes('login')
 		
@@ -68,9 +68,9 @@ const AppRoutes: FC = () => {
 		const adminType = localStorage.getItem('admin_type')
 		const admin = localStorage.getItem('admin')
 		
-		let currentUrl = window.location.pathname
+		const currentUrl = window.location.pathname
 		
-		let extractedText = currentUrl.split('/')[1]
+		const extractedText = currentUrl.split('/')[1]
 		
 		const isLoginPage = currentUrl.includes('login')
 		const masterAdminLogin = localStorage.getItem('fg_master')
@@ -82,12 +82,15 @@ const AppRoutes: FC = () => {
 		}
 
 		if (admin && !isLoginPage) {
-
+			console.log(1);
+			console.log('extractedText :- ', extractedText);
+			console.log('admin :- ', admin);
+			
 			if (
 				extractedText === 'fgiit' &&
-				admin !== 'FGIIT'
+				admin !== 'THREE-STYLE'
 			) {
-				localStorage.setItem('admin', 'FGIIT')
+				localStorage.setItem('admin', 'THREE-STYLE')
 				window.location.href = currentUrl
 			}
 			if (
@@ -130,11 +133,11 @@ const AppRoutes: FC = () => {
 					/>
 					{isAuthenticated ? (
 						<>
-							{fgiitToken && adminType === 'FGIIT' ? (
+							{threeStyleToken && adminType === 'THREE-STYLE' ? (
 								<>
 									<Route
 										path='/fgiit/*'
-										element={<FgiitPrivateRoutes />}
+										element={<ThreeStylePrivateRoutes />}
 									/>
 									<Route
 										index
@@ -150,7 +153,7 @@ const AppRoutes: FC = () => {
 									/>
 									<Route
 										path='/fgiit/*'
-										element={<FgiitPrivateRoutes />}
+										element={<ThreeStylePrivateRoutes />}
 									/>
 									<Route
 										index
@@ -171,7 +174,7 @@ const AppRoutes: FC = () => {
 								</>
 							)}
 							{
-							fgiitToken ||
+							threeStyleToken ||
 							gomziNutritionToken ? (
 								<Route
 									path='/master/*'

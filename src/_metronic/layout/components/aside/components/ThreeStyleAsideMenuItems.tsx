@@ -14,7 +14,7 @@ import {
 import { AsideMenuItem } from '../AsideMenuItem'
 import { AsideMenuItemWithSub } from '../AsideMenuItemWithSub'
 
-export function FGIITAsideMenuItems() {
+export function ThreeStyleAsideMenuItems() {
 	return (
 		<>
 			<AsideMenuItem

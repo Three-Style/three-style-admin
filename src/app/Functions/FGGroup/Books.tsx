@@ -7,7 +7,7 @@ export function CreateBook(body: {
 	description: string
 	amount: number
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.CreateBook, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.CreateBook, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function UpdateBook(body: {
@@ -16,11 +16,11 @@ export function UpdateBook(body: {
 	description: string
 	amount: number
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateBook, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateBook, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function RemoveBook(body: { book_id: string }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.RemoveBook, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.RemoveBook, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function GetBooks(
@@ -28,16 +28,16 @@ export function GetBooks(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetBooks, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetBooks, getAPIHeaders('three_style'), query)
 }
 
 export function GetBookFeedbacks(query?: { feedback_id: string }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetBooksFeedback, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetBooksFeedback, getAPIHeaders('three_style'), query)
 }
 
 export function UpdateBookFeedback(body: {
 	feedback_id: string
 	status: FeedbackStatusValue
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.GetBooksFeedback, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.GetBooksFeedback, getAPIHeaders('three_style'), undefined, body)
 }

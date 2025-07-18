@@ -12,7 +12,7 @@ export async function LoginFGGroup(data: {
 	return await APIPost(FGGroupEndpoints.Login, undefined, undefined, data)
 		.then(async (response: any) => {
 			if (response.status === HttpStatusCode.Ok) {
-				localStorage.setItem('@fggroup+auth', response.data.authorization)
+				localStorage.setItem('@threestyle+auth', response.data.authorization)
 				return await GetUniversalAccessTokens()
 			} else {
 				return response
@@ -36,7 +36,7 @@ export async function VerifyEmailOTP(data: {
 	return await APIPost(FGGroupEndpoints.VerifyEmailOTP, undefined, undefined, data)
 		.then(async (response: any) => {
 			if (response.status === HttpStatusCode.Ok) {
-				localStorage.setItem('@fggroup+auth', response.data.authorization)
+				localStorage.setItem('@threestyle+auth', response.data.authorization)
 				return await GetUniversalAccessTokens()
 			} else {
 				return response
@@ -47,14 +47,17 @@ export async function VerifyEmailOTP(data: {
 
 export async function GetUniversalAccessTokens(): Promise<FGGroupAPIResponse> {
 	return await APIGet(FGGroupEndpoints.GetUniversalAccessToken, {
-		Authorization: localStorage.getItem('@fggroup+auth'),
+		Authorization: localStorage.getItem('@threestyle+auth'),
 	})
 		.then((response: any) => {
+			console.log('response :- ', response);
+			
 			if (response.status !== 200) throw response
 			if (response?.data?.length) {
 				const currentUrl = window.location.pathname
 				response?.data.forEach((item: { platform: string; access: string }) => {
 					if (item.platform && item.access) {
+						console.log(0);
 						localStorage.setItem('auth_' + item.platform, item.access)
 						if (currentUrl === '/employee/login') {
 							localStorage.setItem('admin', 'Employee')
@@ -69,22 +72,22 @@ export async function GetUniversalAccessTokens(): Promise<FGGroupAPIResponse> {
 						} else if (currentUrl === '/trainer/login') {
 							localStorage.setItem('admin', 'Trainer')
 						} else {
-							localStorage.setItem('admin', 'FGIIT')
+							localStorage.setItem('admin', 'THREE-STYLE')
 						}
 					}
 				})
-				window.location.href = '/'
+				// window.location.href = '/'
 			}
 			return response
 		})
 		.catch((error) => error)
 		.finally(() => {
-			localStorage.removeItem('@fggroup+auth')
+			localStorage.removeItem('@threestyle+auth')
 		})
 }
 
 export function getProfile(): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetProfile, getAPIHeaders('fg_group'))
+	return APIGet(FGGroupEndpoints.GetProfile, getAPIHeaders('three_style'))
 }
 
 export function UpdateProfile(data: {
@@ -101,7 +104,7 @@ export function UpdateProfile(data: {
 	country?: string
 	fcm_token?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateProfile, getAPIHeaders('fg_group'), undefined, data)
+	return APIPost(FGGroupEndpoints.UpdateProfile, getAPIHeaders('three_style'), undefined, data)
 }
 
 /**
@@ -113,7 +116,7 @@ export function ChangePassword(data: {
 	password: string
 	old_password: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.ChangePassword, getAPIHeaders('fg_group'), undefined, data)
+	return APIPost(FGGroupEndpoints.ChangePassword, getAPIHeaders('three_style'), undefined, data)
 }
 
 export function AddAuthenticatorSecret(body: {
@@ -122,7 +125,7 @@ export function AddAuthenticatorSecret(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.AddAuthenticatorSecret,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -133,7 +136,7 @@ export function RemoveAuthenticatorSecret(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.RemoveAuthenticatorSecret,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -162,7 +165,7 @@ export function FileUploadToFGGroup(
 
 	return APIPost(
 		FGGroupEndpoints.FileUpload,
-		getAPIHeaders('fg_group', { 'Content-Type': 'multipart/form-data' }),
+		getAPIHeaders('three_style', { 'Content-Type': 'multipart/form-data' }),
 		undefined,
 		formData
 	)

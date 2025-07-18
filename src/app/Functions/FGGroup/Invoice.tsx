@@ -41,7 +41,7 @@ export function createInvoice(body: {
 	note?: string
 	items: item[]
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.CreateInvoice, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.CreateInvoice, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function updateInvoice(body: {
@@ -60,11 +60,11 @@ export function updateInvoice(body: {
 	note?: string
 	items?: item[]
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateInvoice, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateInvoice, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function deleteInvoice(query: { id: string }): Promise<FGGroupAPIResponse> {
-	return APIDelete(FGGroupEndpoints.DeleteInvoice, getAPIHeaders('fg_group'), query)
+	return APIDelete(FGGroupEndpoints.DeleteInvoice, getAPIHeaders('three_style'), query)
 }
 
 export function getInvoice(
@@ -79,13 +79,13 @@ export function getInvoice(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetInvoices, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetInvoices, getAPIHeaders('three_style'), query)
 }
 
 export function getNextInvoiceSequence(query?: {
 	invoice_category: string
 }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetNextInvoiceSequence, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetNextInvoiceSequence, getAPIHeaders('three_style'), query)
 }
 
 /**
@@ -96,5 +96,5 @@ export function getInvoiceStats(query: { invoice_category: string }): Promise<FG
 	console.warn(
 		`[DEPRECATED] Use Insights API (Insights/GetInvoiceInsights) instead of GetInvoiceStats()`
 	)
-	return APIGet(FGGroupEndpoints.GetInvoiceStats, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetInvoiceStats, getAPIHeaders('three_style'), query)
 }

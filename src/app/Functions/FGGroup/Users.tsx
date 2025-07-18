@@ -6,7 +6,7 @@ import * as FGGroupEndpoints from '../../constants/fg_group_endpoints'
 export function GetUsers(
 	query?: { id?: string } & FGGroupSearchOptions & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetUsers, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetUsers, getAPIHeaders('three_style'), query)
 }
 
 export function GetStudents(
@@ -19,7 +19,7 @@ export function GetStudents(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetStudentUsers, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetStudentUsers, getAPIHeaders('three_style'), query)
 }
 
 export function UpdateUser(body: {
@@ -35,18 +35,18 @@ export function UpdateUser(body: {
 	pin_code?: string
 	notes?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateUser, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateUser, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function LockUnlockUser(body: {
 	user_id: string
 	lock?: boolean
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.LockUnlockUser, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.LockUnlockUser, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function RemoveUser(body: { id: string }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.RemoveUser, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.RemoveUser, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function CreateUser(body: {
@@ -55,7 +55,7 @@ export function CreateUser(body: {
 	mobile: string
 	email: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.CreateUser, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.CreateUser, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function GetUserDietPreferences(
@@ -63,7 +63,7 @@ export function GetUserDietPreferences(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetUserDietPreference, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetUserDietPreference, getAPIHeaders('three_style'), query)
 }
 
 export function SendPushNotification(body: {
@@ -83,5 +83,5 @@ export function SendPushNotification(body: {
 		})
 	}
 
-	return APIPost(FGGroupEndpoints.SendFCMNotification, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.SendFCMNotification, getAPIHeaders('three_style'), undefined, body)
 }

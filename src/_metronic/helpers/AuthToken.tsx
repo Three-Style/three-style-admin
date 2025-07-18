@@ -1,11 +1,11 @@
 export const getPlatformAuthorizationToken = (
-	platform: 'fg_group' | 'fwg' | 'gcs'
+	platform: 'three_style'
 ): string | null => {
 	return localStorage.getItem('auth_' + platform)
 }
 
 export function getAPIHeaders(
-	platform: 'fg_group' | 'fwg' | 'gcs',
+	platform: 'three_style',
 	additionalHeaders?: object
 ): object {
 	return {

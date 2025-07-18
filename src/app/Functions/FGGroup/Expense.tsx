@@ -19,7 +19,7 @@ export function createExpense(body: {
 	note?: string
 	items: item[]
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.CreateExpense, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.CreateExpense, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function updateExpense(body: {
@@ -32,11 +32,11 @@ export function updateExpense(body: {
 	note?: string
 	items?: item[]
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateExpense, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateExpense, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function deleteExpense(query: { id: string }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.DeleteExpense, getAPIHeaders('fg_group'), query)
+	return APIPost(FGGroupEndpoints.DeleteExpense, getAPIHeaders('three_style'), query)
 }
 
 export function getExpense(
@@ -49,12 +49,12 @@ export function getExpense(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetExpense, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetExpense, getAPIHeaders('three_style'), query)
 }
 
 export function getNextExpenseSequence(query?: {
 	expense_company: string
 }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetNextExpenseSequence, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetNextExpenseSequence, getAPIHeaders('three_style'), query)
 }
 

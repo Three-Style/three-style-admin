@@ -3,20 +3,20 @@ import { APIGet, APIPost } from '../../../_metronic/helpers/Utils'
 import * as FGGroupEndpoints from '../../constants/fg_group_endpoints'
 
 export function GetAdminUsers(query?: { adminID?: string }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetAdminUsers, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetAdminUsers, getAPIHeaders('three_style'), query)
 }
 
 export function ResetPassword(body: { id: string; password: string }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.ResetAdminUserPassword,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
 }
 
 export function RemoveAdminUser(body: { id: string }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.RemoveAdminUser, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.RemoveAdminUser, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function CreateAdmin(body: {
@@ -27,7 +27,7 @@ export function CreateAdmin(body: {
 	password: string
 	franchise_id: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.CreateAdminAccount, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.CreateAdminAccount, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function UpdateAdmin(body: {
@@ -36,5 +36,5 @@ export function UpdateAdmin(body: {
 	mobile: string
 	id: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateAdminUsers, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateAdminUsers, getAPIHeaders('three_style'), undefined, body)
 }

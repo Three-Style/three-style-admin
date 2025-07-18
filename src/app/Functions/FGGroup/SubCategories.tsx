@@ -5,18 +5,18 @@ import * as FGGroupEndpoints from '../../constants/fg_group_endpoints'
 export function AddSubCategories(body: {
 	name: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.AddSubCategories, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.AddSubCategories, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function UpdateSubCategories(body: {
 	id: string
 	name?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateSubCategories, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateSubCategories, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function GetSubCategories(
 	query?: { id?: string } & FGGroupSearchOptions & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetSubCategories, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetSubCategories, getAPIHeaders('three_style'), query)
 }

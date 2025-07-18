@@ -5,18 +5,18 @@ import * as FGGroupEndpoints from '../../constants/fg_group_endpoints'
 export function AddFabric(body: {
 	name: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.AddFabric, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.AddFabric, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function UpdateFabric(body: {
 	id: string
 	name?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateFabric, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateFabric, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function GetFabric(
 	query?: { id?: string } & FGGroupSearchOptions & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFabric, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFabric, getAPIHeaders('three_style'), query)
 }

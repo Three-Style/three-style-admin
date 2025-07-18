@@ -11,7 +11,7 @@ export function CreateFitnessCourse(body: {
 	duration: number
 	course_category: FitnessCourseType
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.CreateFitnessCourse, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.CreateFitnessCourse, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function UpdateFitnessCourse(body: {
@@ -21,17 +21,17 @@ export function UpdateFitnessCourse(body: {
 	course_name?: string
 	course_category?: FitnessCourseType
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateFitnessCourse, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateFitnessCourse, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function RemoveFitnessCourse(body: { id: string }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.RemoveFitnessCourse, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.RemoveFitnessCourse, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function GetFitnessCourse(
 	query?: { id?: string } & FGGroupSearchOptions & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFitnessCourse, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFitnessCourse, getAPIHeaders('three_style'), query)
 }
 
 // --- Fitness Course Lectures ---
@@ -47,7 +47,7 @@ export function AddLecture(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.AddFitnessCourseLecture,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -64,7 +64,7 @@ export function UpdateLecture(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.UpdateFitnessCourseLecture,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -73,7 +73,7 @@ export function UpdateLecture(body: {
 export function DeleteLecture(body: { lecture_id: string }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.RemoveFitnessCourseLecture,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -87,7 +87,7 @@ export function GetLecture(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFitnessCourseLectures, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFitnessCourseLectures, getAPIHeaders('three_style'), query)
 }
 
 // --- Fitness Course Exam ---
@@ -105,7 +105,7 @@ export function CreateExam(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.CreateFitnessCourseExam,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -125,7 +125,7 @@ export function UpdateExam(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.UpdateFitnessCourseExam,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -136,7 +136,7 @@ export function GetExam(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFitnessCourseExam, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFitnessCourseExam, getAPIHeaders('three_style'), query)
 }
 
 export function GetResultExam(
@@ -148,13 +148,13 @@ export function GetResultExam(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFitnessCourseResultExam, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFitnessCourseResultExam, getAPIHeaders('three_style'), query)
 }
 
 export function DeleteExam(body: { exam_id: string }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.RemoveFitnessCourseExam,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -170,41 +170,41 @@ export function UpdateQuestion(body: {
 		options: [{ _id?: string; option: string; is_correct: boolean }]
 	}[]
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateFCEQuestion, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateFCEQuestion, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function DeleteQuestion(body: {
 	exam_id: string
 	question_id: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateFCEQuestion, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateFCEQuestion, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function AllocateExam(body: {
 	exam_id: string
 	attendees: { user_id: string; start_time: Date }[]
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.FCEAllocate, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.FCEAllocate, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function UpdateAllocation(body: {
 	exam_id: string
 	attendees: { _id: string; start_time: Date }
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateFCEAllocation, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateFCEAllocation, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function RemoveAllocation(body: {
 	exam_id: string
 	allocation_id: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.RemoveFCEAllocation, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.RemoveFCEAllocation, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function GetAllocation(
 	query?: { exam_id?: string; search_user?: string } & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFCEAllocations, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFCEAllocations, getAPIHeaders('three_style'), query)
 }
 
 export function GetResult(
@@ -215,7 +215,7 @@ export function GetResult(
 	} & FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFCEResults, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFCEResults, getAPIHeaders('three_style'), query)
 }
 
 // --- Fitness Course Feedback ---
@@ -224,7 +224,7 @@ export function GetFeedback(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFitnessCourseFeedback, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFitnessCourseFeedback, getAPIHeaders('three_style'), query)
 }
 
 export function UpdateFeedback(body: {
@@ -233,7 +233,7 @@ export function UpdateFeedback(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.UpdateFitnessCourseFeedback,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -266,7 +266,7 @@ export function GetLectureComments(query?: {
 	comment_wise_skip?: number
 	comment_wise_is_replied_by_admin?: boolean
 }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.FitnessCourseLectureComments, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.FitnessCourseLectureComments, getAPIHeaders('three_style'), query)
 }
 
 export function UpdateComment(body: {
@@ -277,7 +277,7 @@ export function UpdateComment(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPatch(
 		FGGroupEndpoints.FitnessCourseLectureComments,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -290,7 +290,7 @@ export function CreateComment(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.FitnessCourseLectureComments,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -303,7 +303,7 @@ export function DeleteComment(query: {
 }): Promise<FGGroupAPIResponse> {
 	return APIDelete(
 		FGGroupEndpoints.FitnessCourseLectureComments,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		query,
 		undefined
 	)
@@ -317,7 +317,7 @@ export function GetUserFitnessCourses(
 	} & FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetUserFitnessCourse, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetUserFitnessCourse, getAPIHeaders('three_style'), query)
 }
 
 export function AssignFitnessCourse(body: {
@@ -329,7 +329,7 @@ export function AssignFitnessCourse(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.AssignFitnessCourseToUser,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -338,7 +338,7 @@ export function AssignFitnessCourse(body: {
 export function DeactivateAssignedFitnessCourse(query: {
 	user_fitness_course_id: string
 }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.DeactivateFitnessCourse, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.DeactivateFitnessCourse, getAPIHeaders('three_style'), query)
 }
 
 export function ExtendFitnessCourseValidity(body: {
@@ -348,7 +348,7 @@ export function ExtendFitnessCourseValidity(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.ExtendFitnessCourseValidity,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -359,7 +359,7 @@ export function RemoveExtendedValidity(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIDelete(
 		FGGroupEndpoints.ExtendFitnessCourseValidity,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -369,7 +369,7 @@ export function GetStudentCourseReviews(query?: {
 	user_id?: string
 	course_id?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetFitnessCourseStudentReview, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetFitnessCourseStudentReview, getAPIHeaders('three_style'), query)
 }
 
 // --- User Fitness Course Certificate ---
@@ -378,7 +378,7 @@ export function CreateCertificate(
 ): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.CreateFitnessCourseCertificate,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -391,7 +391,7 @@ export function UpdateFitnessCourseCertificate(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.UpdateFitnessCourseCertificate,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -400,7 +400,7 @@ export function UpdateFitnessCourseCertificate(body: {
 export function DeleteCertificate(query?: { certificate_id: string }): Promise<FGGroupAPIResponse> {
 	return APIDelete(
 		FGGroupEndpoints.DeleteFitnessCourseCertificate,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		query
 	)
 }
@@ -408,7 +408,7 @@ export function DeleteCertificate(query?: { certificate_id: string }): Promise<F
 export function GenerateCertificate(query: {
 	certificate_id?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GenerateFitnessCourseCertificate, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GenerateFitnessCourseCertificate, getAPIHeaders('three_style'), query)
 }
 
 export function GenerateQRCertificate(query: {
@@ -416,11 +416,11 @@ export function GenerateQRCertificate(query: {
 }): Promise<FGGroupAPIResponse> {
 	return APIGet(
 		FGGroupEndpoints.GenerateFitnessCourseQRCertificate,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		query
 	)
 }
 
 export function verifyCertificate(query: { certificate_id: string }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.VerifyCertificate, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.VerifyCertificate, getAPIHeaders('three_style'), query)
 }

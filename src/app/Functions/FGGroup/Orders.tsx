@@ -15,14 +15,14 @@ export function GetOrders(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetOrders, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetOrders, getAPIHeaders('three_style'), query)
 }
 
 export function FetchRazorpayPaymentDetails(body?: {
 	razorpay_id: string
 	gateway?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.FetchPaymentDetails, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.FetchPaymentDetails, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function UpdateOrder(body: {
@@ -31,7 +31,7 @@ export function UpdateOrder(body: {
 	paid_amount?: number
 	currency?: string
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.UpdateOrder, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.UpdateOrder, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function SetBookOrderTrackingStatus(body: {
@@ -39,7 +39,7 @@ export function SetBookOrderTrackingStatus(body: {
 	status: boolean
 	shipment_status: ShipmentStatusValue
 }): Promise<FGGroupAPIResponse> {
-	return APIPost(FGGroupEndpoints.SetBookTrackingStatus, getAPIHeaders('fg_group'), undefined, body)
+	return APIPost(FGGroupEndpoints.SetBookTrackingStatus, getAPIHeaders('three_style'), undefined, body)
 }
 
 export function SetProductOrderTrackingStatus(body: {
@@ -49,7 +49,7 @@ export function SetProductOrderTrackingStatus(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.SetProductTrackingStatus,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
@@ -62,5 +62,5 @@ export function GetOrderCart(query?: {
 	item_type?: OrderItemTypeValue
 	is_purchased?: boolean
 }): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetOrderCart, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetOrderCart, getAPIHeaders('three_style'), query)
 }

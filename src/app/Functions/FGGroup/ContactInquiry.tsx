@@ -7,13 +7,13 @@ export function GetContactInquiry(
 		FGGroupPaginationOptions &
 		FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetContactInquiry, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetContactInquiry, getAPIHeaders('three_style'), query)
 }
 
 export function GetRTPConsultancy(
 	query?: { booking_id?: string } & FGGroupPaginationOptions & FGGroupSortOptions
 ): Promise<FGGroupAPIResponse> {
-	return APIGet(FGGroupEndpoints.GetRTPConsultancyInquiry, getAPIHeaders('fg_group'), query)
+	return APIGet(FGGroupEndpoints.GetRTPConsultancyInquiry, getAPIHeaders('three_style'), query)
 }
 
 export function UpdateReadReceipt(body: {
@@ -23,7 +23,7 @@ export function UpdateReadReceipt(body: {
 }): Promise<FGGroupAPIResponse> {
 	return APIPost(
 		FGGroupEndpoints.UpdateInquiryReadReceipt,
-		getAPIHeaders('fg_group'),
+		getAPIHeaders('three_style'),
 		undefined,
 		body
 	)
