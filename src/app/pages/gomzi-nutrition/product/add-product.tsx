@@ -2,6 +2,8 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 import { TagsInput } from 'react-tag-input-component'
 import { PageTitle } from '../../../../_metronic/layout/core'
 import InputField from '../../../components/InputField'
@@ -138,11 +140,6 @@ const AddGomziNutritionProduct = () => {
 			}
 		}
 	}
-
-	useEffect(() => {
-		console.log('selectedData :- ', selectedData)
-		console.log('selectedData :- ', selectedData.categories.name)
-	}, [selectedData])
 
 	// const handleFileButtonClick = () => {
 	// 	const fileInput = document.getElementById('fileInput') as HTMLInputElement | null
@@ -383,18 +380,6 @@ const AddGomziNutritionProduct = () => {
 												</div>
 												<div className='col-md-4 fv-row mb-7'>
 													<InputField
-														placeholder='Enter Description'
-														type='text'
-														className='fv-row'
-														name='description'
-														label='Description'
-														htmlFor='description'
-														value={formData.description}
-														onChange={handleInputChange}
-													/>
-												</div>
-												<div className='col-md-4 fv-row mb-7'>
-													<InputField
 														placeholder='Enter Stock'
 														type='number'
 														className='fv-row'
@@ -487,6 +472,26 @@ const AddGomziNutritionProduct = () => {
 														}
 														name='tags'
 														placeHolder='Enter Tags'
+													/>
+												</div>
+												<div className='col-md-12 fv-row mb-7'>
+													<label
+														htmlFor='description'
+														className='fw-bold fs-6 mb-2'>
+														Description
+													</label>
+													<ReactQuill
+														id='description'
+														value={formData.description}
+														onChange={(value: any) =>
+															setFormData((prevData) => ({
+																...prevData,
+																description: value,
+															}))
+														}
+														placeholder='Enter Description...'
+														theme='snow'
+														style={{ height: '200px', marginBottom: '20px' }}
 													/>
 												</div>
 											</div>

@@ -3,7 +3,7 @@ import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import clsx from 'clsx'
 import { useFormik } from 'formik'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import * as Yup from 'yup'
 import { LoginWithEmailPasswordOTP, VerifyEmailOTP } from '../../../Functions/FGGroup'
 import { useAuth } from '../core/Auth'
@@ -60,6 +60,7 @@ export function Login() {
 					})
 					if (auth.status !== 200) throw new Error(auth.message)
 					saveAuth(auth.data)
+					window.location.href = '/'
 				} else {
 					// Initial login
 					const auth: any = await LoginWithEmailPasswordOTP(values)
@@ -238,36 +239,37 @@ export function Login() {
 						)}
 					</div>
 
-					<button className='text-primary border-0 bg-white' onClick={async (e) => {
-						e.preventDefault();
-						if (!resendOtpDisabled) {
-							try {
-								const auth: any = await LoginWithEmailPasswordOTP(formik.values)
-								if (auth.status !== 200) throw new Error(auth.message)
-								if (auth.data.otp) {
-									setOtpRequired(true)
-									formik.setFieldValue('otp', auth.data.otp)
-									setVerificationId(auth.data.verification_id)
-									setResendOtpDisabled(true)
-									setTimer(60)
-								} else if (auth.data.verification_id) {
-									setOtpRequired(true)
-									setVerificationId(auth.data.verification_id)
-									setResendOtpDisabled(true)
-									setTimer(60)
-								} else {
-									saveAuth(auth.data)
+					<button
+						className='text-primary border-0 bg-white'
+						onClick={async (e) => {
+							e.preventDefault()
+							if (!resendOtpDisabled) {
+								try {
+									const auth: any = await LoginWithEmailPasswordOTP(formik.values)
+									if (auth.status !== 200) throw new Error(auth.message)
+									if (auth.data.otp) {
+										setOtpRequired(true)
+										formik.setFieldValue('otp', auth.data.otp)
+										setVerificationId(auth.data.verification_id)
+										setResendOtpDisabled(true)
+										setTimer(60)
+									} else if (auth.data.verification_id) {
+										setOtpRequired(true)
+										setVerificationId(auth.data.verification_id)
+										setResendOtpDisabled(true)
+										setTimer(60)
+									} else {
+										saveAuth(auth.data)
+									}
+								} catch (error) {
+									console.error(error)
 								}
-							} catch (error) {
-								console.error(error)
 							}
-						}
-					}}>
+						}}>
 						Resend OTP
 					</button>
 
 					<span className='fw-bold'>{resendOtpDisabled && ` (${timer} seconds)`}</span>
-
 
 					{/* Action button */}
 					<div className='d-grid mt-5 mb-6'>
@@ -280,10 +282,16 @@ export function Login() {
 					</div>
 
 					<div className='text-center'>
-						<h3><button className='text-primary fw-600 border-0 bg-white' onClick={() => {
-							setOtpRequired(false)
-							setLoading(false)
-						}}>Back to Login?</button></h3>
+						<h3>
+							<button
+								className='text-primary fw-600 border-0 bg-white'
+								onClick={() => {
+									setOtpRequired(false)
+									setLoading(false)
+								}}>
+								Back to Login?
+							</button>
+						</h3>
 					</div>
 				</>
 			)}

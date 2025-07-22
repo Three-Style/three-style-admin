@@ -12,6 +12,8 @@ import { FileUploadToFGGroup, GetProduct, UpdateProduct } from '../../../Functio
 import { GetCategories } from '../../../Functions/FGGroup/Categories'
 import { GetFabric } from '../../../Functions/FGGroup/Fabric'
 import { GetSubCategories } from '../../../Functions/FGGroup/SubCategories'
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 const EditGomziNutritionProduct = () => {
 	const location = useLocation()
@@ -174,7 +176,7 @@ const EditGomziNutritionProduct = () => {
 	const handleUpdateButtonClick = async () => {
 		try {
 			setIsSubmitting(true)
-			
+
 			const payload: any = {
 				id: product_id,
 				display_image: imageArray,
@@ -375,18 +377,6 @@ const EditGomziNutritionProduct = () => {
 												</div>
 												<div className='col-md-4 fv-row mb-7'>
 													<InputField
-														placeholder='Enter Description'
-														type='text'
-														className='fv-row'
-														name='description'
-														label='Description'
-														htmlFor='description'
-														value={formData.description}
-														onChange={handleInputChange}
-													/>
-												</div>
-												<div className='col-md-4 fv-row mb-7'>
-													<InputField
 														placeholder='Enter Stock'
 														type='number'
 														className='fv-row'
@@ -479,6 +469,26 @@ const EditGomziNutritionProduct = () => {
 														}
 														name='tags'
 														placeHolder='Enter Tags'
+													/>
+												</div>
+												<div className='col-md-12 fv-row mb-7'>
+													<label
+														htmlFor='description'
+														className='fw-bold fs-6 mb-2'>
+														Description
+													</label>
+													<ReactQuill
+														id='description'
+														value={formData.description}
+														onChange={(value: any) =>
+															setFormData((prevData) => ({
+																...prevData,
+																description: value,
+															}))
+														}
+														placeholder='Enter Description...'
+														theme='snow'
+														style={{ height: '200px', marginBottom: '20px' }}
 													/>
 												</div>
 											</div>

@@ -37,7 +37,7 @@ const DashboardWrapper = () => {
 	const fetchUserData = async () => {
 		try {
 			const response = await GetGeneralDashboard()
-			const DashboardResponse: any = response.data
+			const DashboardResponse: any = response?.data
 			setDashboardData(DashboardResponse)
 		} catch (error: any) {
 			toast.error(error.message)
@@ -69,40 +69,40 @@ const DashboardWrapper = () => {
 			let response: any
 
 			// Group, sum the amounts, and sum the order counts by category
-			const booksAndEbooks = response.data.filter(
+			const booksAndEbooks = response?.data?.filter(
 				(item: any) => item.item_type === 'BOOKS' || item.item_type === 'EBOOKS'
 			)
-			const booksAndEbooksTotal = booksAndEbooks.reduce(
+			const booksAndEbooksTotal = booksAndEbooks?.reduce(
 				(acc: any, item: any) => acc + item.total_amount,
 				0
 			)
 
 			const booksCount = booksAndEbooks
-				.filter((item: any) => item.item_type === 'BOOKS')
-				.reduce((acc: any, item: any) => acc + item.order_count, 0)
+				?.filter((item: any) => item.item_type === 'BOOKS')
+				?.reduce((acc: any, item: any) => acc + item.order_count, 0)
 
 			const ebooksCount = booksAndEbooks
-				.filter((item: any) => item.item_type === 'EBOOKS')
-				.reduce((acc: any, item: any) => acc + item.order_count, 0)
+				?.filter((item: any) => item.item_type === 'EBOOKS')
+				?.reduce((acc: any, item: any) => acc + item.order_count, 0)
 
-			const fgMealProduct = response.data.filter(
+			const fgMealProduct = response?.data?.filter(
 				(item: any) => item.item_type === 'FG_MEAL_PRODUCT'
 			)
-			const fgMealProductTotal = fgMealProduct.reduce(
+			const fgMealProductTotal = fgMealProduct?.reduce(
 				(acc: any, item: any) => acc + item.total_amount,
 				0
 			)
-			const fgMealProductCount = fgMealProduct.reduce(
+			const fgMealProductCount = fgMealProduct?.reduce(
 				(acc: any, item: any) => acc + item.order_count,
 				0
 			)
 
-			const fitnessCourse = response.data.filter((item: any) => item.item_type === 'FITNESS_COURSE')
-			const fitnessCourseTotal = fitnessCourse.reduce(
+			const fitnessCourse = response?.data?.filter((item: any) => item.item_type === 'FITNESS_COURSE')
+			const fitnessCourseTotal = fitnessCourse?.reduce(
 				(acc: any, item: any) => acc + item.total_amount,
 				0
 			)
-			const fitnessCourseCount = fitnessCourse.reduce(
+			const fitnessCourseCount = fitnessCourse?.reduce(
 				(acc: any, item: any) => acc + item.order_count,
 				0
 			)

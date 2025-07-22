@@ -50,14 +50,11 @@ export async function GetUniversalAccessTokens(): Promise<FGGroupAPIResponse> {
 		Authorization: localStorage.getItem('@threestyle+auth'),
 	})
 		.then((response: any) => {
-			console.log('response :- ', response);
-			
 			if (response.status !== 200) throw response
 			if (response?.data?.length) {
 				const currentUrl = window.location.pathname
 				response?.data.forEach((item: { platform: string; access: string }) => {
 					if (item.platform && item.access) {
-						console.log(0);
 						localStorage.setItem('auth_' + item.platform, item.access)
 						if (currentUrl === '/employee/login') {
 							localStorage.setItem('admin', 'Employee')

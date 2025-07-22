@@ -82,10 +82,6 @@ const AppRoutes: FC = () => {
 		}
 
 		if (admin && !isLoginPage) {
-			console.log(1);
-			console.log('extractedText :- ', extractedText);
-			console.log('admin :- ', admin);
-			
 			if (
 				extractedText === 'fgiit' &&
 				admin !== 'THREE-STYLE'
