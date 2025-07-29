@@ -152,7 +152,7 @@ const ProductOrderView = () => {
 						<div>
 							<TableButton
 								action='view'
-								to={'/nutrition/users/view-user?user_id=' + userData._id}
+								to={'/three-style/users/view-user?user_id=' + userData._id}
 								text='View User'
 								backgroundDark={true}
 								showIcon={false}
@@ -250,7 +250,7 @@ const ProductOrderView = () => {
 						<div>
 							{/* <TableButton
 								action='view'
-								to={'/nutrition/gomzi-nutrition-product-edit?product_id=' + itemData._id}
+								to={'/three-style/gomzi-nutrition-product-edit?product_id=' + itemData._id}
 								text='View Product'
 								backgroundDark={true}
 								showIcon={false}
@@ -341,7 +341,7 @@ const ProductOrderView = () => {
 						<div className='card-title m-0 py-6 d-flex align-items-center justify-content-between'>
 							<h3 className='fw-bolder m-0'>Tracking Details</h3>
 							<div>
-								<Link to={'/nutrition/all-order/view-order?order_id=' + order_id}>
+								<Link to={'/three-style/all-order/view-order?order_id=' + order_id}>
 									<button
 										type='button'
 										className='btn btn-warning btn-sm mx-2 me-5'>

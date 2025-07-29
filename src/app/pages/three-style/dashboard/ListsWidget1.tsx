@@ -25,7 +25,7 @@ const ListsWidget1: React.FC<Props> = ({ dashboardData, className }) => {
 
 			<div className='card-body pt-0'>
 				{/* Registered Users */}
-				<Link to='/fgiit/users'>
+				<Link to='/three-style/users'>
 					<div className='d-flex align-items-center bg-light-warning rounded p-5 mb-7'>
 						<span className=' text-warning me-5'>
 							<FontAwesomeIcon
@@ -41,7 +41,7 @@ const ListsWidget1: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link>
 
 				{/* Scholarship Result */}
-				<Link to='/fgiit/scholarship-result'>
+				<Link to='/three-style/scholarship-result'>
 					<div className='d-flex align-items-center bg-light-primary rounded p-5 mb-7'>
 						<span className=' text-success me-5'>
 							<FontAwesomeIcon
@@ -61,7 +61,7 @@ const ListsWidget1: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link>
 
 				{/* Week Inquiry */}
-				<Link to='/fgiit/contact-inquiry/contact'>
+				<Link to='/three-style/contact-inquiry/contact'>
 					<div className='d-flex align-items-center bg-light-danger rounded p-5 mb-7'>
 						<span className=' text-danger me-5'>
 							<FontAwesomeIcon
@@ -77,7 +77,7 @@ const ListsWidget1: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link>
 
 				{/* Total Order */}
-				<Link to='/fgiit/all-order'>
+				<Link to='/three-style/all-order'>
 					<div className='d-flex align-items-center bg-light-info rounded p-5 mb-7'>
 						<span className=' text-info me-5'>
 							<FontAwesomeIcon
@@ -93,7 +93,7 @@ const ListsWidget1: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link>
 
 				{/* RTP Consultancy */}
-				<Link to='/fgiit/rtp-consultancy'>
+				<Link to='/three-style/rtp-consultancy'>
 					<div className='d-flex align-items-center bg-light-success rounded p-5 mb-7'>
 						<span className=' text-info me-5'>
 							<FontAwesomeIcon
@@ -109,7 +109,7 @@ const ListsWidget1: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link>
 
 				{/* Seminar Registration */}
-				<Link to='/fgiit/seminar-registration'>
+				<Link to='/three-style/seminar-registration'>
 					<div className='d-flex align-items-center bg-light-secondary rounded p-5 mb-5'>
 						<span className=' text-info me-5'>
 							<FontAwesomeIcon

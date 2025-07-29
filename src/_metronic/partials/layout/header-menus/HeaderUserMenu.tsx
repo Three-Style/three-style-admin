@@ -72,7 +72,7 @@ const HeaderUserMenu: FC = () => {
 				<>
 					<div className='menu-item px-5'>
 						<Link
-							to={'/fgiit/admin-user/admin-profile'}
+							to={'/three-style/admin-user/admin-profile'}
 							className='menu-link px-5'>
 							My Profile
 						</Link>

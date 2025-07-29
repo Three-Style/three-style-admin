@@ -119,7 +119,7 @@ const EditAdminUser = () => {
 					const response: FGGroupAPIResponse = await RemoveAdminUser({ id: admin_id })
 					if (response.status === 200) {
 						toast.success('Admin Remove successfully')
-						navigate('/fgiit/admin-user');
+						navigate('/three-style/admin-user');
 					} else {
 						toast.error('Failed to Remove Admin')
 					}

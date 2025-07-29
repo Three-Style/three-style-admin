@@ -21,7 +21,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 				</div>
 
 				<div className='card-body pt-5'>
-					<Link to='/fgiit/fitness-plan'>
+					<Link to='/three-style/fitness-plan'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -39,7 +39,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 						</div>
 					</Link>
 
-					<Link to='/fgiit/free-session'>
+					<Link to='/three-style/free-session'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -59,7 +59,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 						</div>
 					</Link>
 
-					<Link to='/fgiit/rtp-consultancy'>
+					<Link to='/three-style/rtp-consultancy'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -79,7 +79,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 						</div>
 					</Link>
 
-					{/* <Link to='/fgiit/'>
+					{/* <Link to='/three-style/'>
           <div className='d-flex align-items-sm-center mb-7'>
             <div className='symbol symbol-50px me-5'>
               <span className='symbol-label'>
@@ -99,7 +99,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6, dashboardData }) 
           </div>
           </Link>
 
-          <Link to='/fgiit/'>
+          <Link to='/three-style/'>
           <div className='d-flex align-items-sm-center mb-7'>
             <div className='symbol symbol-50px me-5'>
               <span className='symbol-label'>

@@ -4,9 +4,13 @@ import {
 	faCartArrowDown,
 	faCartShopping,
 	faChartLine,
+	faCoins,
+	faDumbbell,
 	faFileInvoice,
+	faHeart,
 	faHome,
 	faJar,
+	faTags,
 	faUser,
 	faUserCog,
 	faUsers,
@@ -18,7 +22,7 @@ export function ThreeStyleAsideMenuItems() {
 	return (
 		<>
 			<AsideMenuItem
-				to='/fgiit/dashboard'
+				to='/three-style/dashboard'
 				Icon={faHome}
 				title='Dashboard'
 			/>
@@ -111,17 +115,84 @@ export function ThreeStyleAsideMenuItems() {
 				title='Cart'
 				Icon={faCartArrowDown}>
 				<AsideMenuItem
-					to='/fgiit/cart/add-to-cart'
+					to='/three-style/cart/add-to-cart'
 					title='User Cart'
 					Icon={faCartShopping}
 				/>
 				<AsideMenuItem
-					to='/fgiit/cart/abandoned-list'
+					to='/three-style/cart/abandoned-list'
 					title='Abandoned Checkout'
 					Icon={faJar}
 				/>
 			</AsideMenuItemWithSub>
 			{/* Cart End*/}
+
+			
+			<AsideMenuItem
+				to='gomzi-nutrition-product'
+				title='All Products'
+				Icon={faJar}
+			/>
+			<AsideMenuItem
+				to='/three-style/add-to-cart'
+				title='User Cart'
+				Icon={faCartShopping}
+			/>
+			<AsideMenuItem
+				to='/three-style/abandoned-list'
+				title='Abandoned Checkout'
+				Icon={faJar}
+			/>
+			<AsideMenuItem
+				to='wishlist'
+				title='Wishlist'
+				Icon={faHeart}
+			/>
+			<AsideMenuItemWithSub
+				to=''
+				title='Invoice'
+				Icon={faFileInvoice}>
+				<AsideMenuItem
+					to='create-invoice-nutrition'
+					title='Create Invoice'
+					hasBullet={true}
+				/>
+				<AsideMenuItem
+					to='nutrition-invoice'
+					title='Invoice List'
+					hasBullet={true}
+				/>
+			</AsideMenuItemWithSub>
+			<AsideMenuItem
+				to='expense'
+				title='Expense'
+				Icon={faChartLine}
+			/>
+			<AsideMenuItem
+				to='create-quotation'
+				title='Quotation'
+				Icon={faCoins}
+			/>
+			<AsideMenuItem
+				to='product-order'
+				title='Product Order'
+				Icon={faJar}
+			/>
+			<AsideMenuItem
+				to='trainer-list'
+				title='Trainer List'
+				Icon={faDumbbell}
+			/>
+			<AsideMenuItemWithSub
+				to=''
+				title='Reference Coupon'
+				Icon={faTags}>
+				<AsideMenuItem
+					to='manage-coupon'
+					title='Manage Coupon'
+					hasBullet={true}
+				/>
+			</AsideMenuItemWithSub>
 		</>
 	)
 }

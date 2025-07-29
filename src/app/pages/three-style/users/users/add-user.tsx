@@ -42,7 +42,7 @@ const AddUserForm = () => {
             })
             setIsSubmitting(false)
 
-            navigate('/fgiit/users')
+            navigate('/three-style/users')
         } catch (error: any) {
             toast.error(error.message)
             setIsSubmitting(false)

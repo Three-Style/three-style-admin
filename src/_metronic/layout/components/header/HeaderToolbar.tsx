@@ -20,11 +20,9 @@ const HeaderToolbar = () => {
 		}
 		if (storedAdmin) {
 			if (storedAdmin === 'THREE-STYLE') {
-				setSelectedLogo('/media/logos/fgiit-logo.png')
+				setSelectedLogo('/media/logos/three-style-logo.png')
 			} else if (storedAdmin === 'Master') {
 				setSelectedLogo('/media/logos/fwg-logo.png')
-			} else if (storedAdmin === 'Gomzi_Nutrition') {
-				setSelectedLogo('/media/logos/gomzi-nutrition.png')
 			}
 		}
 		if (storedAdminType) {
@@ -40,11 +38,9 @@ const HeaderToolbar = () => {
 		localStorage.setItem('admin', value)
 
 		if (value === 'THREE-STYLE') {
-			window.location.href = '/fgiit/dashboard'
+			window.location.href = '/three-style/dashboard'
 		} else if (value === 'Master') {
 			window.location.href = '/master/dashboard'
-		} else if (value === 'Gomzi_Nutrition') {
-			window.location.href = '/nutrition/dashboard'
 		}
 	}
 
@@ -92,11 +88,7 @@ const HeaderToolbar = () => {
 						<div className='bullet bg-secondary h-35px w-1px mx-5'></div>
 
 						<div className='d-flex align-items-center'>
-							{adminType !== 'Employee' &&
-							adminType !== 'Vesu-Master' &&
-							adminType !== 'Store' &&
-							fwgSubAdminShow !== 'fwg_portal' &&
-							adminType !== 'Trainer' ? (
+							{adminType !== 'Employee' ? (
 								<a
 									href='#'
 									className='btn btn-icon btn-sm btn-icon-muted btn-active-icon-primary'
@@ -114,11 +106,7 @@ const HeaderToolbar = () => {
 							) : (
 								''
 							)}
-							{adminType !== 'Employee' &&
-							adminType !== 'Vesu-Master' &&
-							adminType !== 'Store' &&
-							fwgSubAdminShow !== 'fwg_portal' &&
-							adminType !== 'Trainer' ? (
+							{adminType !== 'Employee' ? (
 								<div
 									className='menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-primary fw-semibold py-4 fs-base w-175px'
 									data-kt-menu='true'>
@@ -138,17 +126,7 @@ const HeaderToolbar = () => {
 										<a
 											href='#'
 											className='menu-link'
-											onClick={() => handleSelection('/media/logos/fgiit-logo.png', 'THREE-STYLE')}>
-											<span className='menu-title'>FGIIT</span>
-										</a>
-									</div>
-									<div className='menu-item my-0'>
-										<a
-											href='#'
-											className='menu-link'
-											onClick={() =>
-												handleSelection('/media/logos/gomzi-nutrition.png', 'Gomzi_Nutrition')
-											}>
+											onClick={() => handleSelection('/media/logos/three-style-logo.png', 'THREE-STYLE')}>
 											<span className='menu-title'>Three Style</span>
 										</a>
 									</div>

@@ -439,7 +439,7 @@ const NutritionAllOrder: React.FC = () => {
 															src={
 																order?.user_info?.profile_image
 																	? `https://files.threestyle.in/${order?.user_info?.profile_image}`
-																	: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																	: toAbsoluteUrl('/media/logos/three-style-logo.png')
 															}
 															alt='User'
 															style={{ width: '50px', height: '50px' }}
@@ -507,7 +507,7 @@ const NutritionAllOrder: React.FC = () => {
 											<td>
 												<TableButton
 													action='view'
-													to={'/nutrition/all-order/view-order?order_id=' + order._id}
+													to={'/three-style/all-order/view-order?order_id=' + order._id}
 												/>
 											</td>
 										</tr>

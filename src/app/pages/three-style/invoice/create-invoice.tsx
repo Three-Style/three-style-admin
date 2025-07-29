@@ -489,7 +489,7 @@ const CreateInvoiceFGIIT: React.FC = () => {
 										<div className='col-md-4'>
 											<div className='text-center'>
 												<img
-													src='/media/logos/fgiit-logo.png'
+													src='/media/logos/three-style-logo.png'
 													width='60%'
 													alt='Company Logo'
 												/>

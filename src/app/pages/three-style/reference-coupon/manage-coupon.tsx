@@ -380,7 +380,7 @@ const ManageCoupon: React.FC = () => {
 																<TableButton
 																	action='view'
 																	to={
-																		'/nutrition/manage-coupon/reference?id=' +
+																		'/three-style/manage-coupon/reference?id=' +
 																		data._id +
 																		'&' +
 																		'coupon_discount=' +

@@ -178,7 +178,7 @@ const Users: React.FC = () => {
 							</div>
 							<TableButton
 								action='add'
-								to='/fgiit/users/add-user'
+								to='/three-style/users/add-user'
 								text='Add'
 							/>
 						</div>
@@ -216,7 +216,7 @@ const Users: React.FC = () => {
 														src={
 															data.profile_image
 																? `https://files.threestyle.in/${data.profile_image}`
-																: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																: toAbsoluteUrl('/media/logos/three-style-logo.png')
 														}
 														alt='User'
 														style={{ width: '50px', height: '50px' }}
@@ -251,7 +251,7 @@ const Users: React.FC = () => {
 											<div className='d-flex'>
 												<TableButton
 													action='view'
-													to={`/fgiit/users/view-user?user_id=` + data._id}
+													to={`/three-style/users/view-user?user_id=` + data._id}
 												/>
 												{data.lock ? (
 													<button
@@ -283,7 +283,7 @@ const Users: React.FC = () => {
 														src={
 															data.profile_image
 																? `https://files.threestyle.in/${data.profile_image}`
-																: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																: toAbsoluteUrl('/media/logos/three-style-logo.png')
 														}
 														alt='User'
 														style={{ width: '50px', height: '50px', borderRadius: '7px' }}

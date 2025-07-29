@@ -10,11 +10,8 @@ export function HeaderWrapper() {
 	const { aside } = config
 	const location = useLocation()
 	const routesToCloseSidebar = [
-		'/fwg/chat',
-		'/hr/hr-chat',
-		'/fgiit/all-order',
-		'/fgiit/contact-inquiry/contact-inquiry-view',
-		'/hr/attendance',
+		'/three-style/all-order',
+		'/three-style/contact-inquiry/contact-inquiry-view',
 	]
 
 	const shouldCloseSidebar = routesToCloseSidebar.includes(location.pathname)

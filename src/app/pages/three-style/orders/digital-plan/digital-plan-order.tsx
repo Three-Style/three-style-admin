@@ -105,7 +105,7 @@ const DigitalPlanOrder: React.FC = () => {
 															src={
 																foodtime.profile_image
 																	? `https://files.threestyle.in/${foodtime.profile_image}`
-																	: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																	: toAbsoluteUrl('/media/logos/three-style-logo.png')
 															}
 															alt='User'
 															style={{ width: '50px', height: '50px' }}
@@ -150,7 +150,7 @@ const DigitalPlanOrder: React.FC = () => {
 													</div>
 													<TableButton
 														action='assign'
-														to='/fgiit/book-user-order-view'
+														to='/three-style/book-user-order-view'
 														text='Explore'
 														showIcon={false}
 														backgroundDark={true}

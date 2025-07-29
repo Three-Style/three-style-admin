@@ -41,7 +41,7 @@ const ListsWidget5: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 				</div>
 
 				<div className='card-body pt-5'>
-					<Link to='/fgiit/student-dashboard'>
+					<Link to='/three-style/student-dashboard'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -61,7 +61,7 @@ const ListsWidget5: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 						</div>
 					</Link>
 
-					<Link to='/fgiit/scholarship-result'>
+					<Link to='/three-style/scholarship-result'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -81,7 +81,7 @@ const ListsWidget5: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 						</div>
 					</Link>
 
-					<Link to='/fgiit/books'>
+					<Link to='/three-style/books'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -99,7 +99,7 @@ const ListsWidget5: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 						</div>
 					</Link>
 
-					<Link to='/fgiit/e-book'>
+					<Link to='/three-style/e-book'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -125,7 +125,7 @@ const ListsWidget5: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 
 				<div className='card-body pt-0'>
 					{/* Digital Plan */}
-					<Link to='/fgiit/digital-plan-order'>
+					<Link to='/three-style/digital-plan-order'>
 						<div className='d-flex align-items-center bg-light-danger rounded p-5 mb-7'>
 							<span className=' text-danger me-5'>
 								<FontAwesomeIcon
@@ -143,7 +143,7 @@ const ListsWidget5: React.FC<Props> = ({ className, items = 6, dashboardData }) 
 					</Link>
 
 					{/* PT Plan */}
-					<Link to='/fgiit/fitness-plan'>
+					<Link to='/three-style/fitness-plan'>
 						<div className='d-flex align-items-center bg-light-success rounded p-5 mb-7'>
 							<span className=' text-success me-5'>
 								<FontAwesomeIcon

@@ -446,7 +446,7 @@ const UserView = () => {
 			fetchUserData()
 			toast.success('User remove successfully')
 
-			navigate('/fgiit/users')
+			navigate('/three-style/users')
 		} catch (error: any) {
 			toast.error(error.message)
 			console.error(error)
@@ -979,7 +979,7 @@ const UserView = () => {
 									<Link
 										className='text-dark'
 										to={
-											'/fgiit/scholarship-result/submissionResult?user_id=' + userResponseData._id
+											'/three-style/scholarship-result/submissionResult?user_id=' + userResponseData._id
 										}>
 										<div
 											className='category-box d-flex align-items-center'
@@ -1006,7 +1006,7 @@ const UserView = () => {
 								<div className='col-md-3 my-2'>
 									<Link
 										className='text-dark'
-										to={'/fgiit/fitness-courses?user_id=' + userResponseData._id}>
+										to={'/three-style/fitness-courses?user_id=' + userResponseData._id}>
 										<div
 											className='category-box d-flex align-items-center'
 											style={{
@@ -1035,7 +1035,7 @@ const UserView = () => {
 								<div className='col-md-3 my-2'>
 									<Link
 										className='text-dark'
-										to={'/fgiit/book-order?user_id=' + userResponseData._id}>
+										to={'/three-style/book-order?user_id=' + userResponseData._id}>
 										<div
 											className='category-box d-flex align-items-center'
 											style={{
@@ -1061,7 +1061,7 @@ const UserView = () => {
 								<div className='col-md-3 my-2'>
 									<Link
 										className='text-dark'
-										to={'/fgiit/all-order?user_id=' + userResponseData._id}>
+										to={'/three-style/all-order?user_id=' + userResponseData._id}>
 										<div
 											className='category-box d-flex align-items-center'
 											style={{
@@ -1260,7 +1260,7 @@ const UserView = () => {
 													<div className='d-flex justify-content-center'>
 														<TableButton
 															action='view'
-															to={`/fgiit/user/user-fitness-course-view?user_fitness_course_id=${user._id}`}
+															to={`/three-style/user/user-fitness-course-view?user_fitness_course_id=${user._id}`}
 														/>
 
 														<div

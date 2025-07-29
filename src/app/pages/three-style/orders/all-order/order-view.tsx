@@ -205,13 +205,13 @@ const OrderView = () => {
 	const handleButtonClick = (id: string, type: string) => {
 		switch (type) {
 			case 'book':
-				window.open(`/fgiit/book-order-view?order_id=${id}`)
+				window.open(`/three-style/book-order-view?order_id=${id}`)
 				break
 			case 'ebook':
-				window.open(`/fgiit/book-order-view?order_id=${id}`)
+				window.open(`/three-style/book-order-view?order_id=${id}`)
 				break
 			case 'meal':
-				window.open(`/fgiit/product-order-view?order_id=${id}`)
+				window.open(`/three-style/product-order-view?order_id=${id}`)
 				break
 			default:
 				toast.error('Invalid subscription type')
@@ -222,7 +222,7 @@ const OrderView = () => {
 		if (!userID) {
 			return submissionID
 		}
-		return `<a href="/fgiit/scholarship-result/submissionResult?user_id=${userID}&submission_id=${submissionID}" target="_blank">${submissionID}</a>`
+		return `<a href="/three-style/scholarship-result/submissionResult?user_id=${userID}&submission_id=${submissionID}" target="_blank">${submissionID}</a>`
 	}
 
 	const getJSONObjectListHTML = (object: any, userID?: any) => {
@@ -261,19 +261,19 @@ const OrderView = () => {
 		book_order_id?: any
 	) {
 		if (type == 'BOOKS') {
-			window.open(`/fgiit/book-order-view?order_id=${book_order_id}`)
+			window.open(`/three-style/book-order-view?order_id=${book_order_id}`)
 		} else {
 			window.open(
-				`/fgiit/user/user-fitness-course-view?user_fitness_course_id=${fitness_course_id}&order_id=${order_id}`
+				`/three-style/user/user-fitness-course-view?user_fitness_course_id=${fitness_course_id}&order_id=${order_id}`
 			)
 		}
 	}
 
 	function viewItemOrder(item_id: string, type?: string) {
 		if (type == 'BOOKS') {
-			window.open(`/fgiit/books/book-view?book_id=${item_id}`)
+			window.open(`/three-style/books/book-view?book_id=${item_id}`)
 		} else {
-			window.open(`/fgiit/fitness-courses?course_id=${item_id}`)
+			window.open(`/three-style/fitness-courses?course_id=${item_id}`)
 		}
 	}
 
@@ -544,7 +544,7 @@ const OrderView = () => {
 						<div className='col-md-12 fv-row mt-5 mb-2 d-flex justify-content-end'>
 							<TableButton
 								action='view'
-								to='/fgiit/users/view-user'
+								to='/three-style/users/view-user'
 								text='View User'
 								backgroundDark={true}
 							/>

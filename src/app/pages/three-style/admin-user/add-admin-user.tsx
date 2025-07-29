@@ -60,7 +60,7 @@ const AddAdminUser = () => {
 			toast.success('Admin Created Successfully')
 			setIsSubmitting(false)
 
-			navigate('/fgiit/admin-user')
+			navigate('/three-style/admin-user')
 		} catch (error) {
 			toast.error('Error Creating Admin')
 			setIsSubmitting(false)

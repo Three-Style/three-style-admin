@@ -26,7 +26,7 @@ const TotalProductOrder: React.FC<Props> = ({ className, color, dashboardData, A
 						<div className='ms-1'>
 							{/* begin::Menu */}
 							{/* <Link
-								to={'/fgiit/product-order'}
+								to={'/three-style/product-order'}
 								className={`btn btn-sm btn-icon btn-color-white btn-active-white border-0 me-n3`}>
 								<KTIcon
 									iconName='category'
@@ -68,7 +68,7 @@ const TotalProductOrder: React.FC<Props> = ({ className, color, dashboardData, A
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/all-order'}
+									to={'/three-style/all-order'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Product Order
 								</Link>
@@ -100,7 +100,7 @@ const TotalProductOrder: React.FC<Props> = ({ className, color, dashboardData, A
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/gomzi-nutrition-product'}
+									to={'/three-style/gomzi-nutrition-product'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Products
 								</Link>
@@ -130,7 +130,7 @@ const TotalProductOrder: React.FC<Props> = ({ className, color, dashboardData, A
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/product-feedback'}
+									to={'/three-style/product-feedback'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Product Feedbacks
 								</Link>

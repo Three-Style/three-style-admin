@@ -1,17 +1,16 @@
 import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { KTCard, toAbsoluteUrl } from '../../../../_metronic/helpers'
 import { PageTitle } from '../../../../_metronic/layout/core'
 import LengthMenu from '../../../components/LengthMenu'
 import SearchFilter from '../../../components/SearchFilter'
-import SelectField from '../../../components/SelectField'
 import Table from '../../../components/Table'
 import UsersListPagination from '../../../components/TablePagination'
 import { GetOrders } from '../../../Functions/FGGroup'
 import { DayJS } from '../../../../_metronic/helpers/Utils'
 
-const FgiitAbandonedList: React.FC = () => {
+const AbandonedList: React.FC = () => {
 	const [searchTerm, setSearchTerm] = useState('')
 	const [abandonedData, setAbandonedData] = useState<any[]>([])
 	const [metaData, setMetaData] = useState<any>()
@@ -23,19 +22,18 @@ const FgiitAbandonedList: React.FC = () => {
 		page: 1,
 		itemsPerPage: 10,
 	})
-	const [itemType, setItemType] = useState<any>({})
 
 	const fetchAbandonedData = async (page?: number) => {
 		setLoading(true)
 		try {
 			const filterQuery: any = {
-				item_type: itemType.item_type,
+				item_type: ['FG_MEAL_PRODUCT'],
 				order_status: 'PENDING',
 			}
 			const response = await GetOrders({
 				page: page || pagination.page,
 				limit: pagination.itemsPerPage,
-				...(searchTerm && { search: searchTerm }),
+				search: searchTerm ? searchTerm : null,
 				sort,
 				sortOrder,
 				...filterQuery,
@@ -43,15 +41,12 @@ const FgiitAbandonedList: React.FC = () => {
 
 			const metaData: any = response.metadata
 			setMetaData(metaData.pagination)
+			let filteredData: any = response.data
 
-			// Filter out orders where order_item_type is 'EBOOKS'
-			let filteredData: any = response.data?.filter(
-				(cart: any) => cart.order_item_type !== 'EBOOKS'
-			)
-
-			// Map through the filtered data to add merged_items
-			filteredData = filteredData?.map((cart: any) => {
-				return {
+			// Merge the CART and multiple_items arrays based on item_id
+			filteredData = filteredData
+				// .filter((cart: any) => cart.gateway !== "RAZORPAY_FGIIT")
+				?.map((cart: any) => ({
 					...cart,
 					merged_items: cart.CART?.map((cartItem: any) => {
 						const matchingItem = cart.multiple_items.find(
@@ -59,13 +54,11 @@ const FgiitAbandonedList: React.FC = () => {
 						)
 						return {
 							...cartItem,
-							amount: matchingItem?.amount || 0,
-							quantity: matchingItem?.quantity || 0,
+							amount: matchingItem?.amount || 0, // Add amount from multiple_items
+							quantity: matchingItem?.quantity || 0, // Add quantity from multiple_items
 						}
 					}),
-				}
-			})
-
+				}))
 			setAbandonedData(filteredData)
 		} catch (error) {
 			console.error(error)
@@ -76,21 +69,7 @@ const FgiitAbandonedList: React.FC = () => {
 
 	useEffect(() => {
 		fetchAbandonedData()
-	}, [pagination.page, pagination.itemsPerPage, sort, sortOrder, itemType])
-
-	const isFirstRender = useRef(true);
-
-	useEffect(() => {
-		if (isFirstRender.current) {
-			isFirstRender.current = false
-			return
-		}
-
-		if (searchTerm.trim() || searchTerm === '') {
-			setPagination((prev) => ({ ...prev, page: 1 }))
-			if (pagination.page === 1) fetchAbandonedData()
-		}
-	}, [searchTerm])
+	}, [pagination.page, pagination.itemsPerPage, sort, sortOrder])
 
 	const handleSortChange = (newSort: string, newSortOrder: QuerySortOptions) => {
 		setSort(newSort)
@@ -103,12 +82,6 @@ const FgiitAbandonedList: React.FC = () => {
 
 	const handleItemsPerPageChange = (value: number) => {
 		setPagination({ ...pagination, itemsPerPage: value })
-	}
-
-	const handleSelectChange = (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-		setPagination((prev) => ({ ...prev, page: 1 }))
-		const { name, value } = event.target
-		setItemType({ ...itemType, [name]: value })
 	}
 
 	const sortableFields = [
@@ -129,35 +102,17 @@ const FgiitAbandonedList: React.FC = () => {
 		<>
 			<PageTitle breadcrumbs={[]}>Abandoned List</PageTitle>
 			<KTCard>
-				<div className='row justify-content-between mx-3 m-5'>
-					<div className='col-md-4 pt-1 d-flex align-items-end'>
+				<div className='d-flex justify-content-between mx-3 m-5'>
+					<div className='d-flex pt-1 mx-2'>
 						<LengthMenu
 							expenseData={abandonedData}
 							handleItemsPerPageChange={handleItemsPerPageChange}
 						/>
 					</div>
-					<div className='col-md-8'>
-						<div className='row align-items-end justify-content-between'>
-							<div className='col-md-6 my-md-0 my-4'>
-								<SelectField
-									className='fv-row m-0'
-									label='Select Item Type'
-									name='item_type'
-									value={itemType.item_type}
-									onChange={handleSelectChange}
-									htmlFor='item_type'
-									options={['FITNESS_COURSE', 'BOOKS']}
-									marginRemove={true}
-								/>
-							</div>
-							<div className='col-md-6 d-flex justify-content-end'>
-								<SearchFilter
-									searchTerm={searchTerm}
-									setSearchTerm={setSearchTerm}
-								/>
-							</div>
-						</div>
-					</div>
+					<SearchFilter
+						searchTerm={searchTerm}
+						setSearchTerm={setSearchTerm}
+					/>
 				</div>
 
 				<div className='py-4 card-body'>
@@ -168,7 +123,7 @@ const FgiitAbandonedList: React.FC = () => {
 							sort={sort}
 							sortOrder={sortOrder}
 							onSortChange={handleSortChange}
-							removeAction={true}
+							disableSortFields={['cover_image']}
 							renderRow={(data: any, index: number, actualIndex: number, isVisible: boolean) => (
 								<React.Fragment key={data._id}>
 									<tr
@@ -191,7 +146,7 @@ const FgiitAbandonedList: React.FC = () => {
 														src={
 															data.profile_image
 																? `https://files.threestyle.in/${data.profile_image}`
-																: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																: toAbsoluteUrl('/media/logos/three-style-logo.png')
 														}
 														alt='User'
 														style={{ width: '50px', height: '50px' }}
@@ -199,9 +154,9 @@ const FgiitAbandonedList: React.FC = () => {
 												</div>
 												<div className='d-flex justify-content-start flex-column'>
 													<span className='text-dark fw-bold  fs-6'>
-														{(data?.user_info?.first_name || 'Deleted User') +
+														{(data.user_info.first_name || 'Deleted User') +
 															' ' +
-															(data?.user_info?.last_name || '')}
+															(data.user_info.last_name || '')}
 													</span>
 													<span className='text-muted fw-semibold text-muted d-flex fs-7'>
 														{data.user_info?.mobile || '-'}
@@ -216,27 +171,13 @@ const FgiitAbandonedList: React.FC = () => {
 										</td>
 										<td>
 											<span className='text-dark fw-bold  mb-1 fs-6'>
-												{data?.fitness_course ? (
-													data?.fitness_course?.course_name || 'N/A'
-												) : data?.books ? (
-													data?.books?.book_title || 'N/A'
+												{data?.product ? (
+													data?.product?.name
 												) : (
 													<ul>
-														{!itemType.item_type
-															? data.merged_items?.map((name: any, index: number) => (
-																	<li key={index}>
-																		{name?.book_title
-																			? name?.book_title + `( × ${name.quantity})` || '-'
-																			: name?.course_name + `( × ${name.quantity})` || '-'}
-																	</li>
-															  ))
-															: data.merged_items?.map((name: any, index: number) => (
-																	<li key={index}>
-																		{itemType.item_type == 'BOOKS'
-																			? name?.book_title + `( × ${name.quantity})` || '-'
-																			: name?.course_name + `( × ${name.quantity})` || '-'}
-																	</li>
-															  ))}
+														{data.merged_items?.map((name: any, index: number) => (
+															<li key={index}>{name.name + `( × ${name.quantity})` || '-'}</li>
+														))}
 													</ul>
 												)}
 											</span>
@@ -262,7 +203,7 @@ const FgiitAbandonedList: React.FC = () => {
 																src={
 																	data.profile_image
 																		? `https://files.threestyle.in/${data.profile_image}`
-																		: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																		: toAbsoluteUrl('/media/logos/three-style-logo.png')
 																}
 																alt='User'
 																style={{ width: '50px', height: '50px' }}
@@ -270,9 +211,9 @@ const FgiitAbandonedList: React.FC = () => {
 														</div>
 														<div className='d-flex justify-content-start flex-column'>
 															<span className='text-dark fw-bold  fs-6'>
-																{(data?.user_info?.first_name || 'Deleted User') +
+																{(data.user_info.first_name || 'Deleted User') +
 																	' ' +
-																	(data?.user_info?.last_name || '')}
+																	(data.user_info.last_name || '')}
 															</span>
 															<span className='text-muted fw-semibold text-muted d-flex fs-7'>
 																{data.user_info?.mobile || '-'}
@@ -280,16 +221,16 @@ const FgiitAbandonedList: React.FC = () => {
 														</div>
 													</div>
 													<br />
-													<strong>{sortableFields[1].title}: </strong> {data?.receipt_id}
+													<strong>{sortableFields[1].title}: </strong> {data.receipt_id}
 													<br />
 													<strong>{sortableFields[2].title}: </strong>{' '}
 													<ul>
 														{data.merged_items?.map((name: any, index: number) => (
-															<li key={index}>{name?.name + `( × ${name?.quantity})` || '-'}</li>
+															<li key={index}>{name.name + `( × ${name.quantity})` || '-'}</li>
 														))}
 													</ul>
 													<br />
-													<strong>{sortableFields[3].title}: </strong> ₹ {data?.amount}
+													<strong>{sortableFields[3].title}: </strong> ₹ {data.amount}
 													<br />
 													<strong>{sortableFields[4].title}: </strong>{' '}
 													{DayJS(data.createdAt).format('DD/MM/YYYY hh:mm:ss A')}
@@ -323,4 +264,4 @@ const FgiitAbandonedList: React.FC = () => {
 	)
 }
 
-export default FgiitAbandonedList
+export default AbandonedList

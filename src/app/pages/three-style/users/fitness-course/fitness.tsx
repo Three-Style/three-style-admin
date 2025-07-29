@@ -189,7 +189,7 @@ const UserFitnessCourses: React.FC = () => {
 										<td>
 											<TableButton
 												action="view"
-												to='/fgiit/fitness-view'
+												to='/three-style/fitness-view'
 												backgroundDark={true}
 											/>
 										</td>

@@ -102,7 +102,7 @@ const NutritionOrderView = () => {
 	const handleButtonClick = (id: string, type: string) => {
 		switch (type) {
 			case 'fg-meal':
-				window.open(`/nutrition/product-order-view?order_id=${id}`)
+				window.open(`/three-style/product-order-view?order_id=${id}`)
 				break
 			default:
 				toast.error('Invalid subscription type')
@@ -113,7 +113,7 @@ const NutritionOrderView = () => {
 		if (!userID) {
 			return submissionID
 		}
-		return `<a href="/nutrition/submission_result_view?user_id=${userID}&submission_id=${submissionID}" target="_blank">${submissionID}</a>`
+		return `<a href="/three-style/submission_result_view?user_id=${userID}&submission_id=${submissionID}" target="_blank">${submissionID}</a>`
 	}
 
 	const getJSONObjectListHTML = (object: any, userID?: any) => {

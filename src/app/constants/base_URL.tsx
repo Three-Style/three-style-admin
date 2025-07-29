@@ -1,5 +1,5 @@
-// let fgGroupBaseUrl = 'https://dev-api.threestyle.in',
-let fgGroupBaseUrl = 'http://localhost',
+let fgGroupBaseUrl = 'https://dev-api.threestyle.in',
+// let fgGroupBaseUrl = 'http://localhost',
 	// fwgBaseUrl = 'http://localhost:82'
 	fwgBaseUrl = 'https://fg-app-dev-api.threestyle.in'
 

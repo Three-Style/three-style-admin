@@ -178,7 +178,7 @@ const Reference: React.FC = () => {
 												<td>
 													<TableButton
 														action='view'
-														to={'/nutrition/all-order/view-order?order_id=' + data._id}
+														to={'/three-style/all-order/view-order?order_id=' + data._id}
 													/>
 												</td>
 											</tr>

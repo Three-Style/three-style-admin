@@ -118,7 +118,7 @@ const BookUserOrderView = () => {
 					<div className='col-md-12 fv-row mt-5 mb-2 d-flex justify-content-end'>
 						<TableButton
 							action="view"
-							to='/fgiit/users/view-user'
+							to='/three-style/users/view-user'
 							text="View User"
 							backgroundDark={true}
 							showIcon={false}
@@ -188,7 +188,7 @@ const BookUserOrderView = () => {
 				<div className='card-body mt-4 mb-4'>
 					<h2 className='fw-bold text-dark fs-1 mb-6 '>Subscription Details</h2>
 					<div className='col-md-12 fv-row mt-5 mb-2 d-flex justify-content-start'>
-						<Link to='/fgiit/book-order-view'>
+						<Link to='/three-style/book-order-view'>
 							<button
 								type='button'
 								className='btn btn-primary mx-2'>

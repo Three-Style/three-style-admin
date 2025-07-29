@@ -31,7 +31,7 @@ const ListsWidget2: React.FC<Props> = ({ dashboardData, className }) => {
 
 			<div className='card-body pt-0'>
 				{/* Digital Plan */}
-				<Link to='/fgiit/digital-plan-order'>
+				<Link to='/three-style/digital-plan-order'>
 					<div className='d-flex align-items-center bg-light-danger rounded p-5 mb-7'>
 						<span className=' text-danger me-5'>
 							<FontAwesomeIcon
@@ -49,7 +49,7 @@ const ListsWidget2: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link>
 
 				{/* PT Plan */}
-				<Link to='/fgiit/fitness-plan'>
+				<Link to='/three-style/fitness-plan'>
 					<div className='d-flex align-items-center bg-light-success rounded p-5 mb-7'>
 						<span className=' text-success me-5'>
 							<FontAwesomeIcon
@@ -66,7 +66,7 @@ const ListsWidget2: React.FC<Props> = ({ dashboardData, className }) => {
 					</div>
 				</Link>
 
-				{/* <Link to='/fgiit/fitness-courses'>
+				{/* <Link to='/three-style/fitness-courses'>
 					<div className='d-flex align-items-center bg-light-primary rounded p-5 mb-7'>
 						<span className=' text-primary me-5'>
 							<FontAwesomeIcon
@@ -84,7 +84,7 @@ const ListsWidget2: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link> */}
 
 				{/* Book Order */}
-				{/* <Link to='/fgiit/book-order'>
+				{/* <Link to='/three-style/book-order'>
 					<div className='d-flex align-items-center bg-light-secondary rounded p-5 mb-7'>
 						<span className=' text-secondary me-5'>
 							<FontAwesomeIcon
@@ -100,7 +100,7 @@ const ListsWidget2: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link> */}
 
 				{/* E-Book Order */}
-				{/* <Link to='/fgiit/e-book-order'>
+				{/* <Link to='/three-style/e-book-order'>
 					<div className='d-flex align-items-center bg-light-info rounded p-5 mb-7'>
 						<span className=' text-info me-5'>
 							<FontAwesomeIcon
@@ -116,7 +116,7 @@ const ListsWidget2: React.FC<Props> = ({ dashboardData, className }) => {
 				</Link> */}
 
 				{/* Product */}
-				{/* <Link to='/fgiit/product-order'>
+				{/* <Link to='/three-style/product-order'>
 					<div className='d-flex align-items-center bg-light-warning rounded p-5 mb-5'>
 						<span className=' text-warning me-5'>
 							<FontAwesomeIcon

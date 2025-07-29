@@ -133,7 +133,7 @@ const WishlistList: React.FC = () => {
 					<div className='card-toolbar'>
 						<TableButton
 							action='add'
-							to='/nutrition/gomzi-nutrition-product-add'
+							to='/three-style/gomzi-nutrition-product-add'
 							text='Add Product'
 						/>
 					</div>
@@ -184,7 +184,7 @@ const WishlistList: React.FC = () => {
 														src={
 															data.profile_image
 																? `https://files.threestyle.in/${data.profile_image}`
-																: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																: toAbsoluteUrl('/media/logos/three-style-logo.png')
 														}
 														alt='User'
 														style={{ width: '50px', height: '50px' }}

@@ -10,11 +10,7 @@ import { AddAdminUser } from '../pages/three-style/admin-user/add-admin-user'
 import { AdminProfileView } from '../pages/three-style/admin-user/admin-profile-view'
 import AdminUserList from '../pages/three-style/admin-user/admin-user-list'
 import { EditAdminUser } from '../pages/three-style/admin-user/edit-admin-user'
-import { BookAdd } from '../pages/three-style/books/book-add'
-import { BookView } from '../pages/three-style/books/book-view'
-import Books from '../pages/three-style/books/books'
 import { DashboardWrapper } from '../pages/three-style/dashboard/DashboardWrapper'
-import FitnessCourses from '../pages/three-style/fitness-course/fitness'
 import CreateInvoiceFGIIT from '../pages/three-style/invoice/create-invoice'
 import TotalSalesListFgiit from '../pages/three-style/invoice/total-sales'
 import UpdateInvoiceFGIIT from '../pages/three-style/invoice/update-invoice'
@@ -32,6 +28,19 @@ import { FitnessView } from '../pages/three-style/users/fitness-course/fitness-v
 import AddUserForm from '../pages/three-style/users/users/add-user'
 import Users from '../pages/three-style/users/users/users'
 import { UserView } from '../pages/three-style/users/users/view-user'
+import GomziNutritionProductList from '../pages/three-style/product/gomzi-list'
+import { AddGomziNutritionProduct } from '../pages/three-style/product/add-product'
+import { EditGomziNutritionProduct } from '../pages/three-style/product/edit-product'
+import AddToCart from '../pages/three-style/add-to-cart/add-to-cart'
+import AbandonedList from '../pages/three-style/abandoned-list/abandoned-list'
+import ProductOrder from '../pages/three-style/product-order/product-order'
+import { ProductOrderView } from '../pages/three-style/product-order/product-order-view'
+import { NutritionOrderView } from '../pages/three-style/product-order/all-order/order-view'
+import NutritionProductFeedback from '../pages/three-style/feedback/product-feedback'
+import ManageCoupon from '../pages/three-style/reference-coupon/manage-coupon'
+import Reference from '../pages/three-style/reference-coupon/reference'
+import GomziNutritionProductStock from '../pages/three-style/stock/gomzi-product-stock-list'
+import WishlistList from '../pages/three-style/wishlist/wishlist-list'
 
 const ThreeStylePrivateRoutes = () => {
 	const UsersPage = lazy(() => import('../modules/apps/user-management/UsersPage'))
@@ -51,24 +60,8 @@ const ThreeStylePrivateRoutes = () => {
 
 				{/*  */}
 				<Route
-					path='/fitness-courses'
-					element={<FitnessCourses />}
-				/>
-				<Route
 					path='/scholarship-result/UserDetails'
 					element={<UserView />}
-				/>
-				<Route
-					path='/books'
-					element={<Books />}
-				/>
-				<Route
-					path='/books/book-view'
-					element={<BookView />}
-				/>
-				<Route
-					path='/books/book-add'
-					element={<BookAdd />}
 				/>
 				<Route
 					path='/users'
@@ -156,6 +149,61 @@ const ThreeStylePrivateRoutes = () => {
 				<Route
 					path='/cart/abandoned-list'
 					element={<FgiitAbandonedList />}
+				/>
+
+				<Route
+					path='/gomzi-nutrition-product'
+					element={<GomziNutritionProductList />}
+				/>
+				<Route
+					path='/gomzi-nutrition-product-add'
+					element={<AddGomziNutritionProduct />}
+				/>
+				<Route
+					path='gomzi-nutrition-product-edit'
+					element={<EditGomziNutritionProduct />}
+				/>
+				<Route
+					path='/add-to-cart'
+					element={<AddToCart />}
+				/>
+				<Route
+					path='/abandoned-list'
+					element={<AbandonedList />}
+				/>
+
+				<Route
+					path='product-order'
+					element={<ProductOrder />}
+				/>
+				<Route
+					path='product-order-view'
+					element={<ProductOrderView />}
+				/>
+				<Route
+					path='/all-order/view-order'
+					element={<NutritionOrderView />}
+				/>
+				<Route
+					path='nutrition-product-feedback'
+					element={<NutritionProductFeedback />}
+				/>
+
+				<Route
+					path='/manage-coupon'
+					element={<ManageCoupon />}
+				/>
+				<Route
+					path='/manage-coupon/reference'
+					element={<Reference />}
+				/>
+				<Route
+					path='product-stock-management'
+					element={<GomziNutritionProductStock />}
+				/>
+				<Route
+					path='/wishlist'
+					element={<WishlistList />}
 				/>
 
 				{/* Lazy Modules */}

@@ -94,7 +94,7 @@ const FitnessPlanOrder: React.FC = () => {
 														src={
 															foodtime.profile_image
 																? `https://files.threestyle.in/${foodtime.profile_image}`
-																: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																: toAbsoluteUrl('/media/logos/three-style-logo.png')
 														}
 														alt='User'
 														style={{ width: '50px', height: '50px' }}

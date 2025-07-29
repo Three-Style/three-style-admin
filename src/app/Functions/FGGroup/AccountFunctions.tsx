@@ -56,18 +56,8 @@ export async function GetUniversalAccessTokens(): Promise<FGGroupAPIResponse> {
 				response?.data.forEach((item: { platform: string; access: string }) => {
 					if (item.platform && item.access) {
 						localStorage.setItem('auth_' + item.platform, item.access)
-						if (currentUrl === '/employee/login') {
-							localStorage.setItem('admin', 'Employee')
-						} else if (currentUrl === '/master/login') {
+						if (currentUrl === '/master/login') {
 							localStorage.setItem('admin', 'Master')
-						} else if (currentUrl === '/nutrition/login') {
-							localStorage.setItem('admin', 'Store')
-						} else if (currentUrl === '/fwg-master/login') {
-							localStorage.setItem('admin', 'Vesu-Master')
-						} else if (currentUrl === '/portal/login') {
-							localStorage.setItem('admin', 'FWG')
-						} else if (currentUrl === '/trainer/login') {
-							localStorage.setItem('admin', 'Trainer')
 						} else {
 							localStorage.setItem('admin', 'THREE-STYLE')
 						}

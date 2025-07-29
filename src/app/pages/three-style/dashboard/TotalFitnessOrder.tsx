@@ -27,7 +27,7 @@ const TotalFitnessOrder: React.FC<Props> = ({ className, color, dashboardData, A
 						<div className='ms-1'>
 							{/* begin::Menu */}
 							<Link
-								to={'/fgiit/fitness-course-order'}
+								to={'/three-style/fitness-course-order'}
 								className={`btn btn-sm btn-icon btn-color-white btn-active-white border-0 me-n3`}>
 								<KTIcon
 									iconName='category'
@@ -69,7 +69,7 @@ const TotalFitnessOrder: React.FC<Props> = ({ className, color, dashboardData, A
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/fitness-course-order'}
+									to={'/three-style/fitness-course-order'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Course Order
 								</Link>
@@ -101,7 +101,7 @@ const TotalFitnessOrder: React.FC<Props> = ({ className, color, dashboardData, A
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/gomzi-nutrition-product'}
+									to={'/three-style/gomzi-nutrition-product'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Fitness Courses
 								</Link>
@@ -131,7 +131,7 @@ const TotalFitnessOrder: React.FC<Props> = ({ className, color, dashboardData, A
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/course-feedback'}
+									to={'/three-style/course-feedback'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Courses Feedbacks
 								</Link>

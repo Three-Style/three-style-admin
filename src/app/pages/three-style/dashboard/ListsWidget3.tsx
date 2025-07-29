@@ -39,7 +39,7 @@ const ListsWidget3: React.FC<Props> = ({ className, items = 6 }) => {
 				</div>
 
 				<div className='card-body pt-5'>
-					<Link to='/fgiit/gomzi-nutrition-product'>
+					<Link to='/three-style/gomzi-nutrition-product'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -57,7 +57,7 @@ const ListsWidget3: React.FC<Props> = ({ className, items = 6 }) => {
 						</div>
 					</Link>
 
-					<Link to='/fgiit/product-feedback'>
+					<Link to='/three-style/product-feedback'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -100,7 +100,7 @@ const ListsWidget3: React.FC<Props> = ({ className, items = 6 }) => {
 				</div>
 
 				<div className='card-body pt-5'>
-					<Link to='/fgiit/contact-inquiry/contact'>
+					<Link to='/three-style/contact-inquiry/contact'>
 						<div className='d-flex align-items-sm-center'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -122,7 +122,7 @@ const ListsWidget3: React.FC<Props> = ({ className, items = 6 }) => {
 				</div>
 
 				<div className='card-body'>
-					<Link to='/fgiit/course-feedback'>
+					<Link to='/three-style/course-feedback'>
 						<div className='d-flex align-items-sm-center mb-15'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>

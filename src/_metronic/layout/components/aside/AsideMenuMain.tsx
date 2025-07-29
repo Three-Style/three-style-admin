@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { ThreeStyleAsideMenuItems } from './components/ThreeStyleAsideMenuItems'
-import { GomziNutritionAsideMenuItems } from './components/GomziNutritionAsideMenuItems'
 import { MasterAsideMenuItems } from './components/MasterAsideMenuItems'
 
 export function AsideMenuMain() {
@@ -25,7 +24,6 @@ export function AsideMenuMain() {
 		<>
 			{adminType === 'THREE-STYLE' && <ThreeStyleAsideMenuItems />}
 			{adminType === 'Master' && <MasterAsideMenuItems />}
-			{adminType === 'Gomzi_Nutrition' && <GomziNutritionAsideMenuItems />}
 		</>
 	)
 }

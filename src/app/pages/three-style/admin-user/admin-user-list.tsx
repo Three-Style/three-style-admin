@@ -68,7 +68,7 @@ const AdminUserList: React.FC = () => {
 					<div className='card-toolbar'>
 						<TableButton
 							action='add'
-							to='/fgiit/admin-user-add'
+							to='/three-style/admin-user-add'
 							text='Add Admin'
 						/>
 					</div>
@@ -156,7 +156,7 @@ const AdminUserList: React.FC = () => {
 												<td>
 													<TableButton
 														action='edit'
-														to={'/fgiit/admin-user-edit?admin_id=' + admin._id}
+														to={'/three-style/admin-user-edit?admin_id=' + admin._id}
 													/>
 												</td>
 											</tr>

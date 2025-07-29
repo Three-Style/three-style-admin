@@ -113,11 +113,11 @@ const FitnessOrder: React.FC = () => {
 	}
 
 	function viewOrder(order_id: string) {
-		window.open('/fgiit/all-order/view-order?order_id=' + order_id)
+		window.open('/three-style/all-order/view-order?order_id=' + order_id)
 	}
 
 	function viewFitnessOrder(fitness_course_id: string, order_id: string) {
-		window.open(`/fgiit/user/user-fitness-course-view?user_fitness_course_id=${fitness_course_id}&order_id=${order_id}`)
+		window.open(`/three-style/user/user-fitness-course-view?user_fitness_course_id=${fitness_course_id}&order_id=${order_id}`)
 	}
 
 	const handleSortChange = (newSort: string, newSortOrder: QuerySortOptions) => {
@@ -199,7 +199,7 @@ const FitnessOrder: React.FC = () => {
 															src={
 																order.profile_image
 																	? `https://files.threestyle.in/${order.profile_image}`
-																	: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																	: toAbsoluteUrl('/media/logos/three-style-logo.png')
 															}
 															alt='User'
 															style={{ width: '50px', height: '50px' }}

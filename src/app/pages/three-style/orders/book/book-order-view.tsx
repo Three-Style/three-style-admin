@@ -148,7 +148,7 @@ const BookOrderView = () => {
 						<div>
 							<TableButton
 								action='view'
-								to={'/fgiit/users/view-user?user_id=' + userData?._id}
+								to={'/three-style/users/view-user?user_id=' + userData?._id}
 								text='View User'
 								backgroundDark={true}
 								showIcon={false}
@@ -307,7 +307,7 @@ const BookOrderView = () => {
 						<div>
 							<TableButton
 								action='view'
-								to={'/fgiit/books/book-view?book_id=' + itemData?._id}
+								to={'/three-style/books/book-view?book_id=' + itemData?._id}
 								text='View Book'
 								backgroundDark={true}
 								showIcon={false}
@@ -457,7 +457,7 @@ const BookOrderView = () => {
 							<div className='d-flex align-items-center'>
 								<TableButton
 									action='assign'
-									to={'/fgiit/all-order/view-order?order_id=' + order_id}
+									to={'/three-style/all-order/view-order?order_id=' + order_id}
 									text='Explore Order'
 									backgroundDark={true}
 									showIcon={false}

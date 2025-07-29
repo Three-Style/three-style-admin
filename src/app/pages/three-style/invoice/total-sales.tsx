@@ -362,7 +362,7 @@ const TotalSalesListFgiit: React.FC = () => {
 								<div className='col-md-12'>
 									<TableButton
 										action='add'
-										to='/fgiit/invoice/create'
+										to='/three-style/invoice/create'
 										text='Create Invoice'
 									/>
 								</div>
@@ -503,12 +503,12 @@ const TotalSalesListFgiit: React.FC = () => {
 											{item?.fullName ? (
 												<TableButton
 													action='edit'
-													to={`/fgiit/invoice/fwg-update?invoice_id=` + item._id}
+													to={`/three-style/invoice/fwg-update?invoice_id=` + item._id}
 												/>
 											) : (
 												<TableButton
 													action='edit'
-													to={`/fgiit/invoice/update?invoice_id=` + item._id}
+													to={`/three-style/invoice/update?invoice_id=` + item._id}
 												/>
 											)}
 										</td>
@@ -523,7 +523,7 @@ const TotalSalesListFgiit: React.FC = () => {
 																src={
 																	item.profile_image
 																		? `https://files.threestyle.in/${item.profile_image}`
-																		: toAbsoluteUrl('/media/logos/fgiit-logo.png')
+																		: toAbsoluteUrl('/media/logos/three-style-logo.png')
 																}
 																alt='User'
 																style={{ width: '50px', height: '50px' }}

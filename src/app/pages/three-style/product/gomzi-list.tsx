@@ -2,18 +2,18 @@ import { faCopy, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useRef, useState } from 'react'
 import toast from 'react-hot-toast'
-import { KTCard, toAbsoluteUrl } from '../../../../_metronic/helpers'
+import { KTCard } from '../../../../_metronic/helpers'
 import { PageTitle } from '../../../../_metronic/layout/core'
 import LengthMenu from '../../../components/LengthMenu'
 import SearchFilter from '../../../components/SearchFilter'
 import Table from '../../../components/Table'
 import TableButton from '../../../components/TableButton'
 import UsersListPagination from '../../../components/TablePagination'
-import { GetWishlist } from '../../../Functions/FGGroup/Wishlist'
+import { GetProduct, UpdateProduct } from '../../../Functions/FGGroup'
 
-const WishlistList: React.FC = () => {
+const GomziNutritionProductList: React.FC = () => {
 	const [searchTerm, setSearchTerm] = useState('')
-	const [wishlistData, setWishlistData] = useState([])
+	const [productData, setProductData] = useState([])
 	const [metaData, setMetaData] = useState<any>()
 	const [sort, setSort] = useState('createdAt')
 	const [sortOrder, setSortOrder] = useState<QuerySortOptions>('desc')
@@ -27,14 +27,14 @@ const WishlistList: React.FC = () => {
 	const fetchData = async (page?: number) => {
 		setLoading(true)
 		try {
-			const response: any = await GetWishlist({
+			const response: any = await GetProduct({
 				page: page || pagination.page,
 				limit: pagination.itemsPerPage,
 				search: searchTerm,
 				sort,
 				sortOrder,
 			})
-			setWishlistData(response.data)
+			setProductData(response.data)
 
 			const metaData: any = response.metadata
 			setMetaData(metaData.pagination)
@@ -84,9 +84,14 @@ const WishlistList: React.FC = () => {
 	}
 
 	const sortableFields = [
-		{ title: 'ID', field: '_id' },
-		{ title: 'User', field: 'user_id' },
-		{ title: 'Product ID', field: 'product_id' },
+		{ title: 'Product ID', field: '_id' },
+		{ title: 'SKU No', field: 'sku_no' },
+		{ title: 'Image', field: 'display_image' },
+		{ title: 'Name', field: 'name' },
+		{ title: 'Price', field: 'price' },
+		{ title: 'Dis Price', field: 'discount_price' },
+		{ title: 'Discount %', field: 'discount_percentage' },
+		{ title: 'Stock', field: 'stock' },
 	]
 
 	const handleRowClick = (id: string) => {
@@ -113,6 +118,22 @@ const WishlistList: React.FC = () => {
 		}
 	}
 
+	const handleRemoveProduct = async (product_id: any) => {
+		try {
+			const payload: any = {
+				id: product_id,
+				status: false,
+			}
+			await UpdateProduct(payload)
+
+			toast.success('Product Remove Successfully')
+			fetchData()
+		} catch (error: any) {
+			toast.error(error.message)
+			console.error(error)
+		}
+	}
+
 	return (
 		<>
 			<PageTitle breadcrumbs={[]}>Three Style Products</PageTitle>
@@ -125,7 +146,7 @@ const WishlistList: React.FC = () => {
 								setSearchTerm={setSearchTerm}
 							/>
 							<LengthMenu
-								expenseData={wishlistData}
+								expenseData={productData}
 								handleItemsPerPageChange={handleItemsPerPageChange}
 							/>
 						</div>
@@ -133,7 +154,7 @@ const WishlistList: React.FC = () => {
 					<div className='card-toolbar'>
 						<TableButton
 							action='add'
-							to='/nutrition/gomzi-nutrition-product-add'
+							to='/three-style/gomzi-nutrition-product-add'
 							text='Add Product'
 						/>
 					</div>
@@ -141,16 +162,15 @@ const WishlistList: React.FC = () => {
 				<div className='py-4 card-body'>
 					<div className='table-responsive'>
 						<Table
-							data={wishlistData}
+							data={productData}
 							columns={sortableFields}
 							sort={sort}
 							sortOrder={sortOrder}
 							onSortChange={handleSortChange}
-							removeAction={true}
-							renderRow={(data: any, index: number, actualIndex: number, isVisible: boolean) => (
+							renderRow={(product: any, index: number, actualIndex: number, isVisible: boolean) => (
 								<React.Fragment key={index}>
 									<tr
-										onClick={() => handleRowClick(data._id)}
+										onClick={() => handleRowClick(product._id)}
 										className='data-row'>
 										<td>
 											<span className='text-dark fw-bold  ms-6 mb-1 fs-6'>
@@ -163,8 +183,8 @@ const WishlistList: React.FC = () => {
 											</span>
 										</td>
 										<td
-											onClick={() => handleCopy(data._id)}
-											onKeyPress={(event) => handleKeyPress(event, data._id)}
+											onClick={() => handleCopy(product._id)}
+											onKeyPress={(event) => handleKeyPress(event, product._id)}
 											role='button'
 											tabIndex={0}>
 											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
@@ -173,44 +193,63 @@ const WishlistList: React.FC = () => {
 														icon={faCopy}
 														className='fs-2 me-2 text-success'
 													/>
-													{data._id}
+													{product._id}
 												</div>
 											</span>
 										</td>
 										<td>
-											<div className='d-flex align-items-center'>
-												<div className='symbol symbol-45px me-5'>
-													<img
-														src={
-															data.profile_image
-																? `https://files.threestyle.in/${data.profile_image}`
-																: toAbsoluteUrl('/media/logos/fgiit-logo.png')
-														}
-														alt='User'
-														style={{ width: '50px', height: '50px' }}
-													/>
-												</div>
-												<div className='d-flex justify-content-start flex-column'>
-													<span className='text-dark fw-bold  fs-6'>
-														{data.first_name + ' ' + data.last_name}
-													</span>
-													<span className='text-muted fw-semibold text-muted d-block fs-7'>
-														{data._id}
-													</span>
-												</div>
-											</div>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>{product.sku_no}</span>
 										</td>
 										<td>
-											<span className='text-dark fw-bold  d-block mb-1 fs-6'>{data.sku_no}</span>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												<img
+													src={`https://files.threestyle.in/` + product?.display_image?.[0]}
+													alt={product.name}
+													style={{ width: '80px', height: '80px', borderRadius: '10px' }}
+												/>
+											</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>{product.name}</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>₹{product.price}</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												₹{product.discount_price}
+											</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												{product.discount_percentage}%
+											</span>
+										</td>
+										<td>
+											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
+												{product.stock} Piece
+											</span>
+										</td>
+										<td>
+											<div className='d-flex'>
+												<TableButton
+													action='edit'
+													to={'/three-style/gomzi-nutrition-product-edit?product_id=' + product._id}
+												/>
+												<TableButton
+													action='remove'
+													onClick={() => handleRemoveProduct(product?._id)}
+												/>
+											</div>
 										</td>
 									</tr>
 									{isVisible && (
 										<tr className={`detail-row ${isVisible ? 'is-visible' : ''}`}>
 											<td colSpan={12}>
 												<div>
-													<strong>{sortableFields[0].title}: </strong> {data.book_title}
+													<strong>{sortableFields[0].title}: </strong> {product.book_title}
 													<br />
-													<strong>{sortableFields[2].title}: </strong> ₹ {data.amount}
+													<strong>{sortableFields[2].title}: </strong> ₹ {product.amount}
 													<br />
 												</div>
 											</td>
@@ -224,12 +263,12 @@ const WishlistList: React.FC = () => {
 							loading={loading}
 						/>
 					</div>
-					{wishlistData.length === 0 && !loading && (
+					{productData.length === 0 && !loading && (
 						<div className='d-flex text-center w-100 align-content-center justify-content-center mt-5'>
 							<b>No records found</b>
 						</div>
 					)}
-					{wishlistData.length > 0 && (
+					{productData.length > 0 && (
 						<UsersListPagination
 							totalPages={metaData?.totalPages}
 							currentPage={pagination.page}
@@ -242,4 +281,4 @@ const WishlistList: React.FC = () => {
 	)
 }
 
-export default WishlistList
+export default GomziNutritionProductList

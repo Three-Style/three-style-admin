@@ -26,7 +26,7 @@ const TotalOrder: React.FC<Props> = ({ className, color, dashboardData, Amount }
 						<div className='ms-1'>
 							{/* begin::Menu */}
 							<Link
-								to={'/fgiit/book-order'}
+								to={'/three-style/book-order'}
 								className={`btn btn-sm btn-icon btn-color-white btn-active-white border-0 me-n3`}>
 								<KTIcon
 									iconName='category'
@@ -68,7 +68,7 @@ const TotalOrder: React.FC<Props> = ({ className, color, dashboardData, Amount }
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/book-order'}
+									to={'/three-style/book-order'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Book Order
 								</Link>
@@ -102,7 +102,7 @@ const TotalOrder: React.FC<Props> = ({ className, color, dashboardData, Amount }
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/e-book-order'}
+									to={'/three-style/e-book-order'}
 									className='fs-5 text-gray-800  fw-bold'>
 									E-Book Orders
 								</Link>
@@ -136,7 +136,7 @@ const TotalOrder: React.FC<Props> = ({ className, color, dashboardData, Amount }
 							{/* begin::Title */}
 							<div className='mb-1 pe-3 flex-grow-1'>
 								<Link
-									to={'/fgiit/book-feedback'}
+									to={'/three-style/book-feedback'}
 									className='fs-5 text-gray-800  fw-bold'>
 									Book Feedbacks
 								</Link>

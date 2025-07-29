@@ -37,7 +37,7 @@ const ListsWidget6: React.FC<Props> = ({ className, items = 6 }) => {
 				</div>
 
 				<div className='card-body pt-5'>
-					<Link to='/fgiit/investment-contact-inquiry?search=INVESTMENT-STARTUP INQUIRY'>
+					<Link to='/three-style/investment-contact-inquiry?search=INVESTMENT-STARTUP INQUIRY'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -57,7 +57,7 @@ const ListsWidget6: React.FC<Props> = ({ className, items = 6 }) => {
 						</div>
 					</Link>
 
-					<Link to='/fgiit/employee-inquiry'>
+					<Link to='/three-style/employee-inquiry'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -77,7 +77,7 @@ const ListsWidget6: React.FC<Props> = ({ className, items = 6 }) => {
 						</div>
 					</Link>
 
-					<Link to='/fgiit/employer-inquiry'>
+					<Link to='/three-style/employer-inquiry'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -97,7 +97,7 @@ const ListsWidget6: React.FC<Props> = ({ className, items = 6 }) => {
 						</div>
 					</Link>
 
-					<Link to='/fgiit/rtp-session?search=Demo RTP Session'>
+					<Link to='/three-style/rtp-session?search=Demo RTP Session'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
@@ -117,7 +117,7 @@ const ListsWidget6: React.FC<Props> = ({ className, items = 6 }) => {
 						</div>
 					</Link>
 
-					<Link to='/fgiit/book-bemo-session?search=Demo Lecture Registration'>
+					<Link to='/three-style/book-bemo-session?search=Demo Lecture Registration'>
 						<div className='d-flex align-items-sm-center mb-7'>
 							<div className='symbol symbol-50px me-5'>
 								<span className='symbol-label'>
