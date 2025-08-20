@@ -6,7 +6,7 @@ export function AddProduct(body: {
 	display_image: [string]
 	name: string
 	price: number
-	discount_price: number
+	original_price: number
 	discount_percentage: number
 	description: string
 	categories: string
@@ -27,7 +27,7 @@ export function UpdateProduct(body: {
 	display_image?: [string]
 	name: string
 	price?: number
-	discount_price?: number
+	original_price?: number
 	discount_percentage?: number
 	description?: string
 	categories?: string

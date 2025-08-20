@@ -42,7 +42,7 @@ const EditGomziNutritionProduct = () => {
 		name: '',
 		price: '',
 		display_image: '',
-		discount_price: '',
+		original_price: '',
 		discount_percentage: '',
 		description: '',
 		short_description: '',
@@ -183,7 +183,7 @@ const EditGomziNutritionProduct = () => {
 				display_image: imageArray,
 				name: formData.name,
 				price: formData.price,
-				discount_price: formData.discount_price,
+				original_price: formData.original_price,
 				discount_percentage: formData.discount_percentage,
 				description: formData.description,
 				short_description: formData.short_description,
@@ -355,13 +355,13 @@ const EditGomziNutritionProduct = () => {
 												</div>
 												<div className='col-md-4 fv-row mb-7'>
 													<InputField
-														placeholder='Enter Discount Price'
+														placeholder='Enter Original Price'
 														type='number'
 														className='fv-row'
-														name='discount_price'
-														label='Discount Price'
-														htmlFor='discount_price'
-														value={formData.discount_price}
+														name='original_price'
+														label='Original Price'
+														htmlFor='original_price'
+														value={formData.original_price}
 														onChange={handleInputChange}
 													/>
 												</div>

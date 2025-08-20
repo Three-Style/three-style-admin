@@ -89,7 +89,7 @@ const GomziNutritionProductList: React.FC = () => {
 		{ title: 'Image', field: 'display_image' },
 		{ title: 'Name', field: 'name' },
 		{ title: 'Price', field: 'price' },
-		{ title: 'Dis Price', field: 'discount_price' },
+		{ title: 'Original Price', field: 'original_price' },
 		{ title: 'Discount %', field: 'discount_percentage' },
 		{ title: 'Stock', field: 'stock' },
 	]
@@ -217,7 +217,7 @@ const GomziNutritionProductList: React.FC = () => {
 										</td>
 										<td>
 											<span className='text-dark fw-bold  d-block mb-1 fs-6'>
-												₹{product.discount_price}
+												₹{product.original_price}
 											</span>
 										</td>
 										<td>
